@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ReporteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('menus.visualizacion');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('Crear', [ReporteController::class,'create'])->name('menus.creacion');
+Route::post('guardar', [ReporteController::class, 'store'])->name('menus.store');
+Route::get('Inicio', [ReporteController::class,'index'])->name('menus.visualizacion');
+Route::view('Edición','menus/edicion')->name('edicion');
 
 
