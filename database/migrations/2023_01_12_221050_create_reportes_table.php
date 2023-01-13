@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('Hora_fin');
             $table->string('Cliente');
             $table->string('Asunto');
-            $table->string('Ejecutivo');
-            $table->tinyInteger('Estatus')->comment('0: Pendiente, 1: En Proceso, 2: Hecho');
+            $table->tinyInteger('Ejecutivo')->comment('0: Paco, 1: Dante, 2: Luisillo, 3: Soporte');
+            $table->tinyInteger('Estatus')->comment('0: Pendiente, 1: Cancelado, 2: Hecho');
             $table->string('Evidencia')->nullable();
-            $table->string('Post-Venta');
+            $table->string('PostVenta');
             $table->string('Comentarios');
             $table->softDeletes();
             $table->timestamps();

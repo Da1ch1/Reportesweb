@@ -14,7 +14,8 @@ class ReporteController extends Controller
      */
     public function index()
     {
-            return view('menus.visualizacion');
+            $reportes = Reporte::orderByDesc('id')->get();
+            return view('menus.visualizacion', compact('reportes'));
     }
 
     /**
@@ -37,19 +38,20 @@ class ReporteController extends Controller
     {
         $datos = $request->validate(
             [
-                'Fecha_inicio' => 'required',
-                'Fecha_fin' => 'nullable|date_format:y-m-d',
-                'Hora_inicio' => 'required',
+                'Fecha_inicio' => 'nullable',
+                'Fecha_fin' => 'nullable',
+                'Hora_inicio' => 'nullable',
                 'Hora_fin' => 'nullable',
                 'Cliente' => 'required',
                 'Asunto' => 'required',
-                'Ejecutivo' => 'required',
+                'Ejecutivo' => 'required|numeric|min:0|max:3',
                 'Estatus' => 'required|numeric|min:0|max:2',
                 'Evidencia' => 'required',
-                'Post-Venta' => 'nullable',
+                'PostVenta' => 'nullable',
                 'Comentarios' => 'nullable',
             ]);
         $reporte = Reporte::create($datos);
+        return redirect()->route('menus.visualizacion');
     }
 
     /**
@@ -71,7 +73,7 @@ class ReporteController extends Controller
      */
     public function edit(Reporte $reporte)
     {
-        //
+        return view('menus.edicion', compact('reporte'));
     }
 
     /**
