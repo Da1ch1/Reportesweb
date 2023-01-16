@@ -1,7 +1,7 @@
 <?php
 
 namespace App\View\Components;
-
+use App\Models\Reporte;
 use Illuminate\View\Component;
 
 class ReporteFormBody extends Component
@@ -15,6 +15,7 @@ class ReporteFormBody extends Component
      */
     public function __construct($reporte = null)
     {
+        
         $this->reporte = $reporte;
     }
 
@@ -27,6 +28,7 @@ class ReporteFormBody extends Component
     {
         $params = [
             'reporte' => $this->reporte,
+            'Ejecutivo' => Reporte::EJECUTIVO,
         ];
         return view('components.reporte-form-body', $params);
     }

@@ -1,30 +1,30 @@
 @csrf
-<div class="row">
+<div class="row" style="align-items: center" >
     <div class="col-sm-2">
-        <label for="InputFecha_inicio" class="form-label">* Fecha Inicio</label>
-        <input type="date" name="Fecha_inicio" id="InputFecha_inicio" class="form-control" value="{{old('Fecha_inicio', $reporte->Fecha_inicio)}}">
+        <label style="margin-left: 10px"for="InputFecha_inicio" class="form-label">* Fecha Inicio</label>
+        <input style="margin-left: 10px" type="date" name="Fecha_inicio" id="InputFecha_inicio" class="form-control" value="{{old('Fecha_inicio')}}">
     </div>
     <div class="col-sm-2">
         <label for="InputFecha_fin" class="form-label">* Fecha Fin</label>
-        <input type="date" name="Fecha_fin" id="InputFecha_fin" class="form-control" value="{{old('Fecha_fin', $reporte->Fecha_fin)}}">
+        <input type="date" name="Fecha_fin" id="InputFecha_fin" class="form-control" value="{{old('Fecha_fin')}}">
     </div>
     <div class="col-sm-1">
-        <label for="InputHora_inicio" class="form-label">* Hora Inicio</label>
-        <input type="text" name="Hora_inicio" id="InputHora_inicio" class="form-control" value="{{old('Hora_inicio', $reporte->Hora_inicio)}}">
+        <label style="margin-left: -15px "for="InputHora_inicio" class="form-label">* Hora Inicio</label>
+        <input type="text" name="Hora_inicio" id="InputHora_inicio" class="form-control" value="{{old('Hora_inicio')}}">
     </div>
     <div class="col-sm-1">
         <label for="InputHora_fin" class="form-label">* Hora fin</label>
-        <input type="tex" name="Hora_fin" id="InputHora_fin" class="form-control" value="{{old('Hora_fin', $reporte->Hora_fin)}}">
+        <input type="tex" name="Hora_fin" id="InputHora_fin" class="form-control" value="{{old('Hora_fin')}}">
     </div>
     <div class="col-sm-4">
         <label for="InputCliente" class="form-label">* Cliente</label>
-        <input type="text" name="Cliente" id="InputCliente" class="form-control" placeholder="..." value="{{old('Cliente', $reporte->Cliente)}}">
+        <input type="text" name="Cliente" id="InputCliente" class="form-control" placeholder="..." value="{{old('Cliente')}}">
     </div>
     <div class="col-sm-4">
-        <label for="InputAsunto" class="form-label">* Asunto</label>
-        <input type="text" name="Asunto" id="InputAsunto" class="form-control" placeholder="..." value="{{old('Asunto', $reporte->Asunto)}}">
+        <label style="margin-left: 10px"for="InputAsunto" class="form-label">* Asunto</label>
+        <input style="margin-left: 10px"type="text" name="Asunto" id="InputAsunto" class="form-control" placeholder="..." value="{{old('Asunto')}}">
     </div>
-    <div class="col-sm-4">    
+    <div class="col-sm-3">    
         <label for="SelectEjecutivo" class="form-label">* Ejecutivo</label>
         <select name="Ejecutivo" id="SelectEjecutivo" class="form-select">
             <option value="0">Paco</option>
@@ -33,10 +33,10 @@
             <option value="3">Soporte</option>
         </select>
         <script>
-            document.getElementById('SelectEjecutivo').value = "{{old('Ejecutivo', $reporte->Ejecutivo)}}";
+            document.getElementById('SelectEjecutivo').value = "{{old('Ejecutivo')}}";
         </script>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <label for="SelectEstatus" class="form-label">* Estatus</label>
         <select name="Estatus" id="SelectEstatus" class="form-select">
             <option value="0">Pendiente</option>
@@ -44,25 +44,25 @@
             <option value="2">Hecho</option>
         </select>
         <script>
-            document.getElementById('SelectEstatus').value = "{{old('Estatus', $reporte->Estatus)}}";
+            document.getElementById('SelectEstatus').value = "{{old('Estatus')}}";
         </script>
     </div>
    
     <div class="col-sm-4">
-        <label for="InputPostVenta" class="form-label">* Post-Venta</label>
-        <input type="text" name="PostVenta" id="InputPostVenta" class="form-control" placeholder="" value="{{old('PostVenta', $reporte->PostVenta)}}">
+        <label style="margin-left: 10px"for="InputPostVenta" class="form-label">* Post-Venta</label>
+        <input style="margin-left: 10px"type="text" name="PostVenta" id="InputPostVenta" class="form-control" placeholder="" value="{{old('PostVenta')}}">
     </div>
     <br>
     <div class="col-sm-9">
-        <label for="TextAreaEvidencia" class="form-label">* Evidencia</label>
-        <textarea  name="Evidencia" id="TextAreaEvidencia" cols="30" rows="10" class="form-control">{{old('Evidencia', $reporte->Evidencia)}}</textarea>
+        <label style="margin-left: 10px"for="TextAreaEvidencia" class="form-label">* Evidencia</label>
+        <textarea style="margin-left: 10px" name="Evidencia" id="TextAreaEvidencia" cols="30" rows="10" class="form-control">{{old('Evidencia')}}</textarea>
     </div>
     <div class="col-sm-4">
-        <label for="InputComentarios" class="form-label">* Comentarios</label>
-        <input type="text" name="Comentarios" id="InputComentarios" class="form-control" placeholder="" value="{{old('Comentarios', $reporte->Comentarios)}}">
+        <label style="margin-left: 10px" for="InputComentarios" class="form-label">* Comentarios</label>
+        <input style="margin-left: 10px"type="text" name="Comentarios" id="InputComentarios" class="form-control" placeholder="" value="{{old('Comentarios')}}">
         <br>
     </div>
-    <div class="col-sm-12 text-end my-2">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+    <div class="col-sm-12 text-center my-2">
+        <button type="submit" class="btn btn-dark">Guardar</button>
     </div>
 </div>

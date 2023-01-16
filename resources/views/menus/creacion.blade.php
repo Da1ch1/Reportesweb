@@ -3,6 +3,8 @@
 @section('title', "Crear")
 
 @section('contenido')
+<br>
+<div  class="card">
     <br>
     <h3>
         Crear Reporte
@@ -20,4 +22,5 @@
             </ul>
         </div>
     @endif
+</div>  
 @endsection

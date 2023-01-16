@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('menus.visualizacion');
+    return view('welcome');
 });
 //Rutas para area de Soporte
+
+Route::get('Reporte/{reporte}/Ver', [ReporteController::class, 'show'])->name('menus.show');
 Route::get('Crear', [ReporteController::class,'create'])->name('menus.creacion');
 Route::post('guardar', [ReporteController::class, 'store'])->name('menus.store');
 Route::get('Inicio', [ReporteController::class,'index'])->name('menus.visualizacion');
 //Route::view('Edición','menus/edicion')->name('edicion');
 Route::get('Reporte/{reporte}/Edicion', [ReporteController::class, 'edit'])->name('menus.edicion');
-
+Route::put('Reporte/{reporte}/Actualizar', [ReporteController::class, 'update'])->name('menus.update');
 
 //Rutas para area contaduria
 

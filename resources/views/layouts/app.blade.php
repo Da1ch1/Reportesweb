@@ -25,17 +25,17 @@
 </head>
 <body class="bg-light">
         <!-- Barra Navegacion -->
-            <section class="et-hero-tabs">
+        
+            <section class="et-hero-tabs card">
                 <h1>SIE</h1>
                 <h3>Reportes de Soporte</h3>
-                <div class="et-hero-tabs-container">
-                    <a class="et-hero-tab" href="{{route('menus.visualizacion')}}">Visualización</a>
-                    <a class="et-hero-tab" href="{{route('menus.creacion')}}">Creación</a>
-                   <!-- <a class="et-hero-tab" href="#">Edición</a> -->
-                    <span class="et-hero-tab-slider"></span>
-                </div>
+                        <div class="et-hero-tabs-container card">
+                            <a class="et-hero-tab" href="{{route('menus.visualizacion')}}">Visualización</a> 
+                            <a class="et-hero-tab" href="{{route('menus.creacion')}}">Creación</a>
+                        <!-- <a class="et-hero-tab" href="#">Edición</a> -->
+                        </div>
             </section>
-
+        
         <!-- Contenido -->
         @yield('Ini')
         <div class="col-sm-12">

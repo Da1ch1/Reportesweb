@@ -1,8 +1,12 @@
 
 body {
     font-family: "Century Gothic", "Lato", sans-serif;
+    margin: 20px;
 }
-
+h3{
+    color: #575757;
+    text-align: center;
+}
 a {
     text-decoration: none;
 }

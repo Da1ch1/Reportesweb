@@ -2,7 +2,11 @@
 @section('title', "Inicio")
 
 @section('Ini')
+<br>
+<div class="card">
+    <br>
     <h3> Listado de reportes</h3>
+    <br>
     <table class="table table-stripped table-hover">
         <thead>
             <tr>
@@ -84,10 +88,12 @@
                         {{$reporte->Comentarios}}
                     </td>
                     <td>
-                        <a href="{{route('menus.edicion', [$reporte])}}" class="btn btn-primary">Editar</a>
+                        <a href="{{route('menus.edicion', [$reporte])}}" class="btn btn-dark" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Editar</a>
+                        <a href="{{route('menus.show', [$reporte])}}" class="btn btn-dark" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Ver</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+</div>   
 @endsection
