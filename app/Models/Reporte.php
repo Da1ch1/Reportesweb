@@ -20,8 +20,20 @@ class Reporte extends Model
         'Ejecutivo',
         'Estatus',
         'Evidencia',
-        'Post-Venta',
+        'PostVenta',
         'Comentarios',
     ];
     protected $dates = ['Fecha_inicio','Fecha_fin'];
+    public const EJECUTIVO = ['Paco', 'Dante', 'Luisillo', 'Soporte'];
+
+    public function Ejecutivo()
+    {
+        return self::EJECUTIVO[$this->Ejecutivo];
+    }
+    public const ESTATUS = ['Pendiente', 'Cancelado', 'Hecho'];
+
+    public function Estatus()
+    {
+        return self::ESTATUS[$this->Estatus];
+    }
 }

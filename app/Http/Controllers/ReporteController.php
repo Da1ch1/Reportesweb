@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReporteRequest;
 use App\Models\Reporte;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class ReporteController extends Controller
      */
     public function index()
     {
-            return view('menus.visualizacion');
+        return view('menus.visualizacion');
     }
 
     /**
@@ -33,23 +34,11 @@ class ReporteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReporteRequest $request)
     {
-        $datos = $request->validate(
-            [
-                'Fecha_inicio' => 'required',
-                'Fecha_fin' => 'nullable|date_format:y-m-d',
-                'Hora_inicio' => 'required',
-                'Hora_fin' => 'nullable',
-                'Cliente' => 'required',
-                'Asunto' => 'required',
-                'Ejecutivo' => 'required',
-                'Estatus' => 'required|numeric|min:0|max:2',
-                'Evidencia' => 'required',
-                'Post-Venta' => 'nullable',
-                'Comentarios' => 'nullable',
-            ]);
+        $datos = $request->validated();
         $reporte = Reporte::create($datos);
+        return redirect()->route('menus.visualizacion');
     }
 
     /**
@@ -71,7 +60,7 @@ class ReporteController extends Controller
      */
     public function edit(Reporte $reporte)
     {
-        //
+        return view('menus.edicion', compact('reporte'));
     }
 
     /**
@@ -81,9 +70,11 @@ class ReporteController extends Controller
      * @param  \App\Models\Reporte  $reporte
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reporte $reporte)
+    public function update(ReporteRequest $request, Reporte $reporte)
     {
-        //
+            $datos = $request->validated();
+            $reporte->update( $datos);
+            return redirect()->route('menus.visualizacion');
     }
 
     /**

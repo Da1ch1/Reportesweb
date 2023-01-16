@@ -1,6 +1,11 @@
 
 body {
     font-family: "Century Gothic", "Lato", sans-serif;
+    margin: 20px;
+}
+h3{
+    color: #575757;
+    text-align: center;
 }
 
 a {
@@ -43,10 +48,7 @@ a {
     background: #fff;
     z-index: 10;
 }
-.et-hero-tabs-container--top {
-    position: fixed;
-    top: 0;
-}
+
 
 .et-hero-tab {
     display: flex;
@@ -64,19 +66,12 @@ a {
     transition: all 0.5s ease;
 }
 
-.et-hero-tab-slider {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 6px;
-    background: #66b1f1;
-    transition: left 0.3s ease;
-}
 
-@media (min-width: 800px) {
+
+@media (min-width: 600px) {
     .et-hero-tabs h1,
     .et-slide h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .et-hero-tabs h3,
     .et-slide h3 {
