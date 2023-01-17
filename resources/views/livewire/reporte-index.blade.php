@@ -94,7 +94,7 @@
                         {{$reporte->Comentarios}}
                     </td>
                     <td>
-                        <a href="{{route('menus.edicion', $reporte)}}" class="btn btn-dark" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Editar</a>
+                        <a href="{{route('menus.edicion', $reporte)}}" class="btn btn-dark" style="--bs-btn-padding-y: .20rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .70rem;">Editar</a>
                     </td>
                 </tr>
             @endforeach
