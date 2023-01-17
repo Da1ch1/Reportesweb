@@ -24,7 +24,6 @@ class ReporteRequest extends FormRequest
     public function rules()
     {
         return [
-
                 'Fecha_inicio' => 'nullable',
                 'Fecha_fin' => 'nullable',
                 'Hora_inicio' => 'nullable',

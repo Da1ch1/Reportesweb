@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\ReporteRequest;
 use App\Models\Reporte;
 use Illuminate\Http\Request;
@@ -49,7 +48,7 @@ class ReporteController extends Controller
      */
     public function show(Reporte $reporte)
     {
-        //
+        return view('menus.show', ['reporte' => $reporte]);
     }
 
     /**

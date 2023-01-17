@@ -36,6 +36,7 @@ class ReporteFormBody extends Component
     {
         $params = [
             'reporte' => $this->reporte,
+            'Ejecutivo' => Reporte::EJECUTIVO,
         ];
         return view('components.reporte-form-body', $params);
     }

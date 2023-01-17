@@ -1,5 +1,5 @@
 @csrf
-<div class="row">
+<div class="row" style="align-items: center" >
     <div class="col-sm-2">
         <label style="margin-bottom: 3px" for="InputFecha_inicio" class="form-label">* Fecha Inicio</label>
         <input style="margin-left: 15px" type="date" name="Fecha_inicio" id="InputFecha_inicio" class="form-control" value="{{old('Fecha_inicio')}}">
