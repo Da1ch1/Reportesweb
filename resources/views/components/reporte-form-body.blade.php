@@ -2,11 +2,11 @@
 <div class="row" style="align-items: center" >
     <div class="col-sm-2">
         <label style="margin-bottom: 3px" for="InputFecha_inicio" class="form-label">* Fecha Inicio</label>
-        <input style="margin-left: 15px" type="date" name="Fecha_inicio" id="InputFecha_inicio" class="form-control" value="{{old('Fecha_inicio')}}">
+        <input style="margin-left: 15px" type="text" name="Fecha_inicio" id="InputFecha_inicio" class="form-control" value="{{old('Fecha_inicio')}}">
     </div>
     <div class="col-sm-2">
         <label style="margin-bottom: 3px" for="InputFecha_fin" class="form-label">* Fecha Fin</label>
-        <input style="margin-left: 5px" type="date" name="Fecha_fin" id="InputFecha_fin" class="form-control" value="{{old('Fecha_fin')}}">
+        <input style="margin-left: 5px" type="text" name="Fecha_fin" id="InputFecha_fin" class="form-control" value="{{old('Fecha_fin')}}">
     </div>
     <div class="col-sm-1">
         <label style="margin-bottom: 3px" for="InputHora_inicio" class="form-label">* Hora Inicio</label>
@@ -26,7 +26,7 @@
     </div>
     <div class="col-sm-2">
         <label style="margin-top: 15px" for="SelectEjecutivo" class="form-label">* Ejecutivo</label>
-        <select style="margin-left: 5px"name="Ejecutivo" id="SelectEjecutivo" class="form-select">
+        <select style="margin-left: 5px"name="Ejecutivo" id="SelectEjecutivo" class="form-select" >
             <option value="0">Paco</option>
             <option value="1">Dante</option>
             <option value="2">Luisillo</option>

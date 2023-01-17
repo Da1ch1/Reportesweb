@@ -35,6 +35,7 @@
         @yield('contenido')
             @yield('Ini')
             @yield('edit')
+            @yield('ver')
         </div>
         <script src="{{ asset('material') }}/js/nav.js"></script>
     @livewireScripts

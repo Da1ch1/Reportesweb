@@ -16,7 +16,7 @@ class ReporteIndex extends Component
         [
             'busqueda' => ['except' => ''],
             'paginacion' => ['except' => 10],
-        ];
+        ];  
     public function render()
     {
         $reportes = $this->consulta();
@@ -25,6 +25,7 @@ class ReporteIndex extends Component
         {
             $this->resetPage();
             $reportes = $this->consulta();
+            
             $reportes = $reportes->paginate($this->paginacion);
         }
         $params = [
@@ -37,7 +38,7 @@ class ReporteIndex extends Component
         $query = Reporte::orderByDesc('id');
         if( $this->busqueda != '')
         {
-            $query->where('Cliente', 'LIKE', '%'.$this->busqueda.'%');
+            $query->where('Cliente','LIKE', '%'.$this->busqueda.'%');
         }
         return $query;
     }

@@ -2,13 +2,13 @@
 
 @section('title', "Reporte")
 
-@section('editar')
+@section('ver')
 <br>
   <div class="card">
         <div >
             <br>
                 <h3>
-                     " <i>{{$reporte->Cliente}}</i> <i>{{$reporte->Asunto}}</i> "
+                     "<i>{{$reporte->Cliente}}</i>"
                 </h3>
             <br>
         </div>

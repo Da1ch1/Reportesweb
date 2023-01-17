@@ -19,11 +19,11 @@
         <div class="row">
             <div class="col-sm-2">
                 <label for="InputFecha_inicio" class="form-label">* Fecha Inicio</label>
-                <input type="date" name="Fecha_inicio" id="InputFecha_inicio" class="form-control" value="{{old('Fecha_inicio',$reporte->Fecha_inicio->format('y-m-d'))}}">
+                <input type="text" name="Fecha_inicio" id="InputFecha_inicio" class="form-control" value="{{old('Fecha_inicio',$reporte->Fecha_inicio->format('d-m-y'))}}">
             </div>
             <div class="col-sm-2">
                 <label for="InputFecha_fin" class="form-label">* Fecha Fin</label>
-                <input type="date" name="Fecha_fin" id="InputFecha_fin" class="form-control" value="{{old('Fecha_fin', $reporte->Fecha_fin->format('y-m-d'))}}">
+                <input type="text" name="Fecha_fin" id="InputFecha_fin" class="form-control" value="{{old('Fecha_fin', $reporte->Fecha_fin->format('d-m-y'))}}">
             </div>
             <div class="col-sm-1">
                 <label for="InputHora_inicio" class="form-label">* Hora Inicio</label>

@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-3">
             <input style="margin-left: 15px" type="text" name="" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">
         </div>
         <div class="col-sm-1">
@@ -61,10 +61,10 @@
                         {{$reporte->id}}
                     </td>
                     <td>
-                        {{$reporte->Fecha_inicio->format('d / m / y')}}
+                        {{$reporte->Fecha_inicio->format('d-m-y')}}
                     </td>
                     <td>
-                        {{$reporte->Fecha_fin->format(' d / m / y')}}
+                        {{$reporte->Fecha_fin->format('d-m-y')}}
                     </td>
                     <td>
                         {{$reporte->Hora_inicio}}
@@ -94,7 +94,8 @@
                         {{$reporte->Comentarios}}
                     </td>
                     <td>
-                        <a href="{{route('menus.edicion', $reporte)}}" class="btn btn-dark" style="--bs-btn-padding-y: .20rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .70rem;">Editar</a>
+                        <a href="{{route('menus.show', $reporte)}}" class="btn btn-dark" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .47rem;">ver</a>
+                        <a href="{{route('menus.edicion', $reporte)}}" class="btn btn-dark" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .47rem;">Editar</a>
                     </td>
                 </tr>
             @endforeach
