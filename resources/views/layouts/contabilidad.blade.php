@@ -19,15 +19,14 @@
 
 <body class="bg-light">
         <!-- Barra Navegacion -->  
-        <button type="button" class="btn btn-dark" onclick="location.href='{{url('/Sie') }}'" style="--bs-btn-padding-y: .39rem; --bs-btn-padding-x: .9rem; --bs-btn-font-size: .59rem; ">Home</button>
-        
+        <a href="{{url('/Sie')}}" class="btn btn-dark" style="--bs-btn-padding-y: .39rem; --bs-btn-padding-x: .9rem; --bs-btn-font-size: .59rem; " >Volver</a>
             <section class="et-hero-tabs">   
                 <h1>SIE</h1>
                 <h3>Reportes</h3>
-                    <h6>Soporte Tecnico</h6>
+                    <h6>Ventas</h6>
                 <div class="et-hero-tabs-container">
-                    <a class="et-hero-tab card"  href="{{route('menus.visualizacion')}}">Visualización</a>
-                    <a class="et-hero-tab card" href="{{route('menus.creacion')}}">Creación</a>
+                    <a class="et-hero-tab card"  href="#">Inicio</a>
+                    <a class="et-hero-tab card" href="#">Crear</a>
                     <!--<a class="et-hero-tab" href="#">Edición</a>-->
 
                 </div>
@@ -44,4 +43,3 @@
     @livewireScripts
 </body>
 </html>
-

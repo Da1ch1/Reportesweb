@@ -13,7 +13,16 @@
    
 </head>
 <body class="bg-light">
+    <div class="sie">
+        <h1>SIE</h1>
+                <h3>Reportes</h3>
+    </div>            
     
+    <button class="button" onclick="location.href='{{route('menus.visualizacion') }}'">Soporte Técnico</button>
+    <button class="button" onclick="location.href='{{route('ventas.inicio') }}'">Ventas</button>
+    <button class="button" >Administración</button>
+    <button class="button" onclick="location.href='{{route('contabilidad.inicio') }}'">Contabilidad</button>
+    <button class="button">Márketing</button>
       <script src="{{ asset('material') }}/js/inicio.js"></script>
 </body>
 </html>
