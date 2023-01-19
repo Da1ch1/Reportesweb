@@ -4,14 +4,17 @@
             <input style="margin-left: 15px" type="text" name="" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">
         </div>
         <div class="col-sm-1">
-            <select  name="" id="" class="form-select  border-dark-subtle" wire:model="paginacion">
+            <select  name="" id="" class="form-select  border-dark-subtle" style="margin-left: 8px;" wire:model="paginacion">
                 <option value="10">10</option>
                 <option value="20">20</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
             </select>
         </div>
-    </div>
+        <div class="col-sm-1"><a href="{{route('home')}}" class="btn btn-dark" style="margin-left: 8px; --bs-btn-font-size: 12px;" >PDF</a></div>
+         </div>
+         &nbsp;
+    <br>
     <div class="card-body">
         <table class="table table-stripped table-hover">
             <thead>

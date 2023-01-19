@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ReporteRequest;
 use App\Models\Reporte;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class ReporteController extends Controller
 {
@@ -16,7 +17,11 @@ class ReporteController extends Controller
     {
         return view('menus.visualizacion');
     }
+    public function pdf()
+    {  $reportes = Reporte::orderByDesc('id')->get();
 
+        return view('home', compact('reportes'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +42,7 @@ class ReporteController extends Controller
     {
         $datos = $request->validated();
         $reporte = Reporte::create($datos);
-        return redirect()->route('menus.visualizacion');
+        return redirect()->route('menus.visualizacion', 'home');
     }
 
     /**

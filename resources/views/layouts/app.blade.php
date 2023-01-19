@@ -3,20 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>@yield('title')</title>
-
     <!-- stilos bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-
-
-
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet">
     @livewireStyles
-  
 </head>
-
 <body class="bg-light">
         <!-- Barra Navegacion -->  
         <button type="button" class="btn btn-dark" onclick="location.href='{{url('/Sie') }}'" style="--bs-btn-padding-y: .39rem; --bs-btn-padding-x: .9rem; --bs-btn-font-size: .59rem; ">Home</button>
@@ -29,7 +21,6 @@
                     <a class="et-hero-tab card"  href="{{route('menus.visualizacion')}}">Visualización</a>
                     <a class="et-hero-tab card" href="{{route('menus.creacion')}}">Creación</a>
                     <!--<a class="et-hero-tab" href="#">Edición</a>-->
-
                 </div>
             </section>
                 <br>

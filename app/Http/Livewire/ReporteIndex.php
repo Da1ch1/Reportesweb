@@ -32,6 +32,7 @@ class ReporteIndex extends Component
             'reportes' => $reportes,
         ];
         return view('livewire.reporte-index', $params);
+        
     }
     private function consulta()
     {
