@@ -19,7 +19,7 @@
     </div>            
     
     <button class="button" onclick="location.href='{{route('menus.visualizacion') }}'">Soporte Técnico</button>
-    <button class="button" onclick="location.href='{{route('ventas.inicio') }}'">Ventas</button>
+    <button class="button" onclick="location.href='{{route('ventas.index') }}'">{{ __('Ventas') }}</button>
     <button class="button" >Administración</button>
     <button class="button" onclick="location.href='{{route('contabilidad.inicio') }}'">Contabilidad</button>
     <button class="button">Márketing</button>

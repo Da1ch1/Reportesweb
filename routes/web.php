@@ -1,6 +1,8 @@
 <?php
-use App\Http\Controllers\ContabilidadController;
-use App\Http\Controllers\VentasController;
+
+
+use App\Http\Controllers\VentaController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ReporteController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +37,6 @@ Route::put('Reporte/{reporte}/Actualizar', [ReporteController::class, 'update'])
 Route::get('/Contabilidad', [ContabilidadController::class,'index'])->name('contabilidad.inicio');
 
 //Rutas para area de ventas
-Route::get('/Ventas', [VentasController::class,'index'])->name('ventas.inicio');
+
+Route::resource('ventas', App\Http\Controllers\VentaController::class);
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
