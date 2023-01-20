@@ -5,6 +5,7 @@ use App\Http\Requests\ReporteRequest;
 use App\Models\Reporte;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
+use PDF;
 
 class ReporteController extends Controller
 {
@@ -18,9 +19,11 @@ class ReporteController extends Controller
         return view('menus.visualizacion');
     }
     public function pdf()
-    {  $reportes = Reporte::orderByDesc('id')->get();
-
-        return view('home', compact('reportes'));
+    {  $reportes = Reporte::paginate(10);
+        $pdf=PDF::loadView('home',['reportes'=>$reportes]);
+        //$pdf->loadHTML('reportes');
+        return $pdf->stream();
+        //return view('home', compact('reportes'));
     }
     /**
      * Show the form for creating a new resource.

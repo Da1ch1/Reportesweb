@@ -6,14 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PDF</title>
          <!-- stilos bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet">
-    </head>
-<body class="card-body">
-    <div class="col-sm-1"><a href="{{route('menus.visualizacion')}}" class="btn btn-dark" style="margin-left: 8px; --bs-btn-font-size: 12px;" >Inicio</a></div>
-    <br>
-    <div class="card">
-        <table class="table table-stripped table-hover">
+    <link href="{{ public_path('sass') }}/resources/sass/app.scss" rel="stylesheet" type="text/css">
+
+</head>
+    
+<body class="card">
+    
+    <h2>Lista de reportes</h2>
+    <div class="table table-stripped table-hover">
+        <table >
             <thead>
             <tr>
                 <th>
@@ -100,6 +101,6 @@
         </table>
         
     </div> 
-    
+    {{$reportes->links()}}
 </body>   
 </html>
