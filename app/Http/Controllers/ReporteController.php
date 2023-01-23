@@ -15,15 +15,17 @@ class ReporteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $reportes = Reporte::paginate();
         return view('menus.visualizacion');
+        
     }
     public function pdf()
     {  $reportes = Reporte::paginate(10);
         $pdf=PDF::loadView('home',['reportes'=>$reportes]);
-        //$pdf->loadHTML('reportes');
+        
         return $pdf->stream();
-        //return view('home', compact('reportes'));
+        
     }
     /**
      * Show the form for creating a new resource.
@@ -82,6 +84,7 @@ class ReporteController extends Controller
             $datos = $request->validated();
             $reporte->update( $datos);
             return redirect()->route('menus.visualizacion');
+            
     }
 
     /**

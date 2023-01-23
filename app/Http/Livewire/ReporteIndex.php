@@ -13,12 +13,14 @@ class ReporteIndex extends Component
     public $paginacion = 10;
     protected $paginationTheme = 'bootstrap';
     protected $queryString =
+    
         [
             'busqueda' => ['except' => ''],
             'paginacion' => ['except' => 10],
         ];  
     public function render()
     {
+        
         $reportes = $this->consulta();
         $reportes = $reportes->paginate($this->paginacion);
         if( $reportes->currentPage() > $reportes->lastPage())

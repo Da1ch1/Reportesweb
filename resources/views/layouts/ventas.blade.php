@@ -7,16 +7,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Sie') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="card-body">
+    
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -76,7 +77,13 @@
                 </div>
             </div>
         </nav>
-
+      <div class="card" style="margin: 18px">  
+        <section class="et-hero-tabs">   
+            <h1>SIE</h1>
+            <h3>Reportes</h3>
+                <h6>Ventas</h6> 
+        </section>
+      </div>  
         <main class="py-4">
             @yield('content')
         </main>

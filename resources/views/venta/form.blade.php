@@ -1,9 +1,10 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
+        
         <div class="form-group">
             {{ Form::label('cliente') }}
-            {{ Form::text('cliente_id', $venta->cliente_id, ['class' => 'form-control' . ($errors->has('cliente_id') ? ' is-invalid' : ''), 'placeholder' => 'Cliente Id']) }}
+            {{ Form::select('cliente_id', $clientes , $venta->cliente_id, ['class' => 'form-control' . ($errors->has('cliente_id') ? ' is-invalid' : ''), 'placeholder' => '']) }}
             {!! $errors->first('cliente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -23,7 +24,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('Proceso actividad') }}
-            {{ Form::text('Procesoactividad', $venta->Procesoactividad, ['class' => 'form-control' . ($errors->has('Procesoactividad') ? ' is-invalid' : ''), 'placeholder' => 'Procesoactividad']) }}
+            {{ Form::text('Procesoactividad', $venta->Procesoactividad, ['class' => 'form-control' . ($errors->has('Procesoactividad') ? ' is-invalid' : ''), 'placeholder' => 'Proceso actividad']) }}
             {!! $errors->first('Procesoactividad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -33,12 +34,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('Sin costo') }}
-            {{ Form::text('Sincosto', $venta->Sincosto, ['class' => 'form-control' . ($errors->has('Sincosto') ? ' is-invalid' : ''), 'placeholder' => 'Sincosto']) }}
+            {{ Form::text('Sincosto', $venta->Sincosto, ['class' => 'form-control' . ($errors->has('Sincosto') ? ' is-invalid' : ''), 'placeholder' => 'Sin costo']) }}
             {!! $errors->first('Sincosto', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('N° factura') }}
-            {{ Form::text('Nfactura', $venta->Nfactura, ['class' => 'form-control' . ($errors->has('Nfactura') ? ' is-invalid' : ''), 'placeholder' => 'Nfactura']) }}
+            {{ Form::text('Nfactura', $venta->Nfactura, ['class' => 'form-control' . ($errors->has('Nfactura') ? ' is-invalid' : ''), 'placeholder' => 'N° factura']) }}
             {!! $errors->first('Nfactura', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -114,6 +115,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-dark" style="margin-top: 19px">Enviar</button>
     </div>
 </div>

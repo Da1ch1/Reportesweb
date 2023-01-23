@@ -1,8 +1,7 @@
 @extends('layouts.ventas')
 
-@section('template_title')
-    {{ $venta->name ?? 'Show Venta' }}
-@endsection
+@section('title', 'Ver Venta')
+
 
 @section('content')
     <section class="content container-fluid">
@@ -11,17 +10,15 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Venta</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('ventas.index') }}"> Back</a>
+                            <span class="card-title">Ver Venta</span>
+                            <a class="btn btn-dark" style="margin-left: 15px; --bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" href="{{ route('ventas.index') }}"> Atras</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cliente Id:</strong>
+                            <strong>Cliente:</strong>
                             {{ $venta->cliente_id }}
                         </div>
                         <div class="form-group">
@@ -37,7 +34,7 @@
                             {{ $venta->Actividad }}
                         </div>
                         <div class="form-group">
-                            <strong>Procesoactividad:</strong>
+                            <strong>Proceso actividad:</strong>
                             {{ $venta->Procesoactividad }}
                         </div>
                         <div class="form-group">
@@ -45,11 +42,11 @@
                             {{ $venta->Atendio }}
                         </div>
                         <div class="form-group">
-                            <strong>Sincosto:</strong>
+                            <strong>Sin costo:</strong>
                             {{ $venta->Sincosto }}
                         </div>
                         <div class="form-group">
-                            <strong>Nfactura:</strong>
+                            <strong>N° factura:</strong>
                             {{ $venta->Nfactura }}
                         </div>
                         <div class="form-group">

@@ -73,6 +73,12 @@ class Venta extends Model
      */
     protected $fillable = ['cliente_id','Dia','Contacto','Actividad','Procesoactividad','Atendio','Sincosto','Nfactura','Poliza','Horario','Sistemas','Soporte','Sistema2','Soporte2','Contabilidad','Programacion','Diseño','MKT','Nom','Equipos','Antivirus','Cursos'];
 
-
+ /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function cliente()
+    {
+        return $this->hasOne('App\Models\Cliente', 'id', 'cliente_id');
+    }
 
 }

@@ -23,6 +23,8 @@ class Reporte extends Model
         'PostVenta',
         'Comentarios',
     ];
+    
+
     protected $dates = ['Fecha_inicio','Fecha_fin'];
     public const EJECUTIVO = ['Paco', 'Dante', 'Luisillo', 'Soporte'];
 

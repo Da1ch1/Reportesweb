@@ -1,8 +1,7 @@
 @extends('layouts.ventas')
 
-@section('template_title')
-    Venta
-@endsection
+@section('title', 'Venta')
+
 
 @section('content')
     <div class="container-fluid">
@@ -18,7 +17,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('ventas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('+Crear venta') }}
                                 </a>
                               </div>
                         </div>
@@ -67,7 +66,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $venta->cliente_id }}</td>
+											<td>{{ $venta->cliente->nombre }}</td>
 											<td>{{ $venta->Dia }}</td>
 											<td>{{ $venta->Contacto }}</td>
 											<td>{{ $venta->Actividad }}</td>
@@ -92,11 +91,11 @@
 
                                             <td>
                                                 <form action="{{ route('ventas.destroy',$venta->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('ventas.show',$venta->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('ventas.edit',$venta->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('ventas.show',$venta->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('ventas.edit',$venta->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

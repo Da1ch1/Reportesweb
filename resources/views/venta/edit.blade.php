@@ -1,8 +1,7 @@
 @extends('layouts.ventas')
 
-@section('template_title')
-    Update Venta
-@endsection
+@section('title', 'Editar Venta')
+
 
 @section('content')
     <section class="content container-fluid">
@@ -13,7 +12,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Venta</span>
+                        <span class="card-title">Editar Venta</span>
+                        <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                            {{ __('Reportes') }}
+                          </a>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('ventas.update', $venta->id) }}"  role="form" enctype="multipart/form-data">

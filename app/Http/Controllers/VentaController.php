@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Cliente; 
 use App\Models\Venta;
 use Illuminate\Http\Request;
 
@@ -32,7 +32,8 @@ class VentaController extends Controller
     public function create()
     {
         $venta = new Venta();
-        return view('venta.create', compact('venta'));
+        $clientes = Cliente::pluck('nombre', 'id');
+        return view('venta.create', compact('venta','clientes'));
     }
 
     /**
@@ -60,8 +61,8 @@ class VentaController extends Controller
     public function show($id)
     {
         $venta = Venta::find($id);
-
-        return view('venta.show', compact('venta'));
+        $clientes = Cliente::pluck('nombre');
+        return view('venta.show', compact('venta','clientes'));
     }
 
     /**
@@ -73,8 +74,8 @@ class VentaController extends Controller
     public function edit($id)
     {
         $venta = Venta::find($id);
-
-        return view('venta.edit', compact('venta'));
+        $clientes = Cliente::pluck('nombre', 'id');
+        return view('venta.edit', compact('venta','clientes'));
     }
 
     /**

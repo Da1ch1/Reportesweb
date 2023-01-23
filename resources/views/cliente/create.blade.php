@@ -1,9 +1,8 @@
 @extends('layouts.ventas')
 
-@section('template_title')
-    Create Cliente
-@endsection
 
+    
+@section('title', "Crear Cliente")
 @section('content')
     <section class="content container-fluid">
         <div class="row">
@@ -13,7 +12,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Cliente</span>
+                        <span class="card-title">Crear Cliente</span>
+                        <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                            {{ __('Reportes') }}
+                          </a>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('clientes.store') }}"  role="form" enctype="multipart/form-data">
