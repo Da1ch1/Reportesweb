@@ -35,6 +35,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clientes.index') }}">{{ __('Clientes') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contactos.index') }}">{{ __('Contactos') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('costos.index') }}">{{ __('Costos') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('actividades.index') }}">{{ __('Avtividades') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

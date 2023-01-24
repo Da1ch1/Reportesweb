@@ -1,6 +1,7 @@
 @extends('layouts.ventas')
 
-@section('title','Ventas')
+@section('title','Actividades')
+
 
 @section('content')
     <div class="container-fluid">
@@ -11,11 +12,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Venta') }}
+                                {{ __('Actividade') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('ventas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('actividades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -34,60 +35,22 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Cliente</th>
-										<th>Dia</th>
-										<th>Contacto</th>
 										<th>Actividad</th>
-										<th>Proceso actividad</th>
-										<th>Atendio</th>
-										<th>Costo Id</th>
-										<th>Nfactura</th>
-										<th>Poliza</th>
-										<th>Horario</th>
-										<th>Sistemas</th>
-										<th>Soporte</th>
-										<th>Contabilidad</th>
-										<th>Programacion</th>
-										<th>Diseño</th>
-										<th>Mkt</th>
-										<th>Nom</th>
-										<th>Equipos</th>
-										<th>Antivirus</th>
-										<th>Cursos</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($ventas as $venta)
+                                    @foreach ($actividades as $actividade)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $venta->cliente_id }}</td>
-											<td>{{ $venta->Dia }}</td>
-											<td>{{ $venta->contacto_id }}</td>
-											<td>{{ $venta->actividad_id }}</td>
-											<td>{{ $venta->Procesoactividad }}</td>
-											<td>{{ $venta->Atendio }}</td>
-											<td>{{ $venta->costo_id }}</td>
-											<td>{{ $venta->Nfactura }}</td>
-											<td>{{ $venta->Poliza }}</td>
-											<td>{{ $venta->Horario }}</td>
-											<td>{{ $venta->Sistemas }}</td>
-											<td>{{ $venta->Soporte }}</td>
-											<td>{{ $venta->Contabilidad }}</td>
-											<td>{{ $venta->Programacion }}</td>
-											<td>{{ $venta->Diseño }}</td>
-											<td>{{ $venta->MKT }}</td>
-											<td>{{ $venta->Nom }}</td>
-											<td>{{ $venta->Equipos }}</td>
-											<td>{{ $venta->Antivirus }}</td>
-											<td>{{ $venta->Cursos }}</td>
+											<td>{{ $actividade->actividad }}</td>
 
                                             <td>
-                                                <form action="{{ route('ventas.destroy',$venta->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('ventas.show',$venta->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('ventas.edit',$venta->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('actividades.destroy',$actividade->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('actividades.show',$actividade->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('actividades.edit',$actividade->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -100,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $ventas->links() !!}
+                {!! $actividades->links() !!}
             </div>
         </div>
     </div>

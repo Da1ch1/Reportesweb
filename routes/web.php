@@ -4,6 +4,9 @@
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ReporteController;
+use App\Http\Controllers\ActividadeController;
+use App\Http\Controllers\CostoController;
+use App\Http\Controllers\ContactoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +43,6 @@ Route::get('/Contabilidad', [ContabilidadController::class,'index'])->name('cont
 
 Route::resource('ventas', App\Http\Controllers\VentaController::class);
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);
+Route::resource('contactos', App\Http\Controllers\ContactoController::class);
+Route::resource('actividades', App\Http\Controllers\ActividadeController::class);
+Route::resource('costos', App\Http\Controllers\CostoController::class);

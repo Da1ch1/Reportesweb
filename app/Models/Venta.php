@@ -10,18 +10,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id
  * @property $cliente_id
  * @property $Dia
- * @property $Contacto
- * @property $Actividad
+ * @property $contacto_id
+ * @property $actividad_id
  * @property $Procesoactividad
  * @property $Atendio
- * @property $Sincosto
+ * @property $costo_id
  * @property $Nfactura
  * @property $Poliza
  * @property $Horario
  * @property $Sistemas
  * @property $Soporte
- * @property $Sistema2
- * @property $Soporte2
  * @property $Contabilidad
  * @property $Programacion
  * @property $Diseño
@@ -33,6 +31,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
+ * @property Actividade $actividade
+ * @property Cliente $cliente
+ * @property Contacto $contacto
+ * @property Costo $costo
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -42,26 +44,25 @@ class Venta extends Model
     static $rules = [
 		'cliente_id' => 'required',
 		'Dia' => 'required',
-		'Contacto' => 'required',
-		'Actividad' => 'required',
+		'contacto_id' => 'required',
+		'actividad_id' => 'required',
 		'Procesoactividad' => 'required',
+        'Vendedor' => 'required',
 		'Atendio' => 'required',
-		'Sincosto' => 'required',
-		'Nfactura' => 'required',
-		'Poliza' => 'required',
+		'costo_id' => 'required',
+		'Nfactura' => 'nullable',
+		'Poliza' => 'nullable',
 		'Horario' => 'required',
-		'Sistemas' => 'required',
-		'Soporte' => 'required',
-		'Sistema2' => 'required',
-		'Soporte2' => 'required',
-		'Contabilidad' => 'required',
-		'Programacion' => 'required',
-		'Diseño' => 'required',
-		'MKT' => 'required',
-		'Nom' => 'required',
-		'Equipos' => 'required',
-		'Antivirus' => 'required',
-		'Cursos' => 'required',
+		'Sistemas' => 'nullable',
+		'Soporte' => 'nullable',
+		'Contabilidad' => 'nullable',
+		'Programacion' => 'nullable',
+		'Diseño' => 'nullable',
+		'MKT' => 'nullable',
+		'Nom' => 'nullable',
+		'Equipos' => 'nullable',
+		'Antivirus' => 'nullable',
+		'Cursos' => 'nullable',
     ];
 
     protected $perPage = 20;
@@ -71,14 +72,40 @@ class Venta extends Model
      *
      * @var array
      */
-    protected $fillable = ['cliente_id','Dia','Contacto','Actividad','Procesoactividad','Atendio','Sincosto','Nfactura','Poliza','Horario','Sistemas','Soporte','Sistema2','Soporte2','Contabilidad','Programacion','Diseño','MKT','Nom','Equipos','Antivirus','Cursos'];
+    protected $fillable = ['cliente_id','Dia','contacto_id','actividad_id','Procesoactividad','Vendedor','Atendio','costo_id','Nfactura','Poliza','Horario','Sistemas','Soporte','Contabilidad','Programacion','Diseño','MKT','Nom','Equipos','Antivirus','Cursos'];
 
- /**
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function actividade()
+    {
+        return $this->hasOne('App\Models\Actividade', 'id', 'actividad_id');
+    }
+    
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function cliente()
     {
         return $this->hasOne('App\Models\Cliente', 'id', 'cliente_id');
     }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function contacto()
+    {
+        return $this->hasOne('App\Models\Contacto', 'id', 'contacto_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function costo()
+    {
+        return $this->hasOne('App\Models\Costo', 'id', 'costo_id');
+    }
+    
 
 }

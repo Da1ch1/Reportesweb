@@ -1,7 +1,6 @@
 @extends('layouts.ventas')
 
-@section('title', 'Ver Venta')
-
+@section('title','Ver Venta')
 
 @section('content')
     <section class="content container-fluid">
@@ -10,15 +9,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Ver Venta</span>
-                            <a class="btn btn-dark" style="margin-left: 15px; --bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" href="{{ route('ventas.index') }}"> Atras</a>
+                            <span class="card-title">Show Venta</span>
+                        </div>
+                        <div class="float-right">
+                            <a class="btn btn-primary" href="{{ route('ventas.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cliente:</strong>
+                            <strong>Cliente Id:</strong>
                             {{ $venta->cliente_id }}
                         </div>
                         <div class="form-group">
@@ -26,15 +27,15 @@
                             {{ $venta->Dia }}
                         </div>
                         <div class="form-group">
-                            <strong>Contacto:</strong>
-                            {{ $venta->Contacto }}
+                            <strong>Contacto Id:</strong>
+                            {{ $venta->contacto_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Actividad:</strong>
-                            {{ $venta->Actividad }}
+                            <strong>Actividad Id:</strong>
+                            {{ $venta->actividad_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Proceso actividad:</strong>
+                            <strong>Procesoactividad:</strong>
                             {{ $venta->Procesoactividad }}
                         </div>
                         <div class="form-group">
@@ -42,11 +43,11 @@
                             {{ $venta->Atendio }}
                         </div>
                         <div class="form-group">
-                            <strong>Sin costo:</strong>
-                            {{ $venta->Sincosto }}
+                            <strong>Costo Id:</strong>
+                            {{ $venta->costo_id }}
                         </div>
                         <div class="form-group">
-                            <strong>N° factura:</strong>
+                            <strong>Nfactura:</strong>
                             {{ $venta->Nfactura }}
                         </div>
                         <div class="form-group">
@@ -64,14 +65,6 @@
                         <div class="form-group">
                             <strong>Soporte:</strong>
                             {{ $venta->Soporte }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Sistema2:</strong>
-                            {{ $venta->Sistema2 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Soporte2:</strong>
-                            {{ $venta->Soporte2 }}
                         </div>
                         <div class="form-group">
                             <strong>Contabilidad:</strong>

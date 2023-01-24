@@ -1,6 +1,7 @@
 @extends('layouts.ventas')
 
-@section('title','Crear Venta')
+@section('title','Crear Contacto')
+
 
 @section('content')
     <section class="content container-fluid">
@@ -11,13 +12,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Venta</span>
+                        <span class="card-title">Create Contacto</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('ventas.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('contactos.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('venta.form')
+                            @include('contacto.form')
 
                         </form>
                     </div>
