@@ -100,8 +100,8 @@
                                         {{$reporte->Comentarios}}
                                     </td>
                                     <td>
-                                        <a href="{{route('menus.show', $reporte)}}" class="btn btn-primary" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .47rem;">ver</a>
-                                        <a href="{{route('menus.edicion', $reporte)}}" class="btn  btn-success" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .47rem;">Editar</a>
+                                        <a href="{{route('menus.show', $reporte)}}" class="btn btn-primary" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;">ver</a>
+                                        <a href="{{route('menus.edicion', $reporte)}}" class="btn  btn-success" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;">Editar</a>
                                     </td>
                                 </tr>
                             @endforeach

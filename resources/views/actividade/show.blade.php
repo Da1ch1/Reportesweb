@@ -9,11 +9,12 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Actividade</span>
+                            <span class="card-title">Ver Actividades</span>
+                            <a href="{{ route('actividades.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                                {{ __('atras') }}
+                              </a>
                         </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('actividades.index') }}"> Back</a>
-                        </div>
+                       
                     </div>
 
                     <div class="card-body">

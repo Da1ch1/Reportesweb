@@ -11,7 +11,9 @@
                     <div class="card-header">
                         <div class="float-left">
                             <span class="card-title">Ver Cliente</span>
-                            <a class="btn btn-dark" href="{{ route('clientes.index') }}" style="margin-left:  17px"> Atras</a>
+                            <a href="{{ route('clientes.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                                {{ __('atras') }}
+                              </a>
                         </div>
                     </div>
 

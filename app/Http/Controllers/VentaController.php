@@ -68,8 +68,11 @@ class VentaController extends Controller
     public function show($id)
     {
         $venta = Venta::find($id);
-
-        return view('venta.show', compact('venta'));
+        $clientes=Cliente::pluck('nombre','id');
+        $contactos=Contacto::pluck('nombre','id');
+        $costos=Costo::pluck('costos','id');
+        $actividades=Actividade::pluck('actividad','id');
+        return view('venta.show', compact('venta','clientes','contactos','costos','actividades'));
     }
 
     /**
@@ -81,8 +84,11 @@ class VentaController extends Controller
     public function edit($id)
     {
         $venta = Venta::find($id);
-
-        return view('venta.edit', compact('venta'));
+        $clientes=Cliente::pluck('nombre','id');
+        $contactos=Contacto::pluck('nombre','id');
+        $costos=Costo::pluck('costos','id');
+        $actividades=Actividade::pluck('actividad','id');
+        return view('venta.edit', compact('venta','clientes','contactos','costos','actividades'));
     }
 
     /**

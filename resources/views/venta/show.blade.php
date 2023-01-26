@@ -9,17 +9,18 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Venta</span>
+                            <span class="card-title">Ver Venta</span>
+                            <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                                {{ __('Reportes') }}
+                              </a>
                         </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('ventas.index') }}"> Back</a>
-                        </div>
+                        
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cliente Id:</strong>
+                            <strong>Cliente:</strong>
                             {{ $venta->cliente_id }}
                         </div>
                         <div class="form-group">
@@ -27,15 +28,15 @@
                             {{ $venta->Dia }}
                         </div>
                         <div class="form-group">
-                            <strong>Contacto Id:</strong>
+                            <strong>Contacto:</strong>
                             {{ $venta->contacto_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Actividad Id:</strong>
+                            <strong>Actividad:</strong>
                             {{ $venta->actividad_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Procesoactividad:</strong>
+                            <strong>Proceso actividad:</strong>
                             {{ $venta->Procesoactividad }}
                         </div>
                         <div class="form-group">
@@ -43,11 +44,11 @@
                             {{ $venta->Atendio }}
                         </div>
                         <div class="form-group">
-                            <strong>Costo Id:</strong>
+                            <strong>Costo:</strong>
                             {{ $venta->costo_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Nfactura:</strong>
+                            <strong>N° factura:</strong>
                             {{ $venta->Nfactura }}
                         </div>
                         <div class="form-group">

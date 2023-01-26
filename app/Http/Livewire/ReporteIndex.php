@@ -41,7 +41,9 @@ class ReporteIndex extends Component
         $query = Reporte::orderByDesc('id');
         if( $this->busqueda != '')
         {
-            $query->where('Cliente','LIKE', '%'.$this->busqueda.'%');
+            $query->where('Ejecutivo','LIKE', '%'.$this->busqueda.'%')
+                        ->orWhere('Fecha_inicio','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Cliente','LIKE','%'.$this->busqueda. '%');
         }
         return $query;
     }

@@ -26,7 +26,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div style="margin-left: 425px" class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <!--<li class="nav-item">
@@ -42,7 +42,7 @@
                             <a class="nav-link" href="{{ route('costos.index') }}">{{ __('Costos') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('actividades.index') }}">{{ __('Avtividades') }}</a>
+                            <a class="nav-link" href="{{ route('actividades.index') }}">{{ __('Actividades') }}</a>
                         </li>
                     </ul>
 

@@ -11,7 +11,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Venta</span>
+                        <span class="card-title">Crear Venta</span>
+                        <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                            {{ __('Reportes') }}
+                          </a>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('ventas.store') }}"  role="form" enctype="multipart/form-data">

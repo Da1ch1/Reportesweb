@@ -11,7 +11,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Actividade</span>
+                        <span class="card-title">Editar Actividades</span>
+                        <a href="{{ route('actividades.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                            {{ __('atras') }}
+                          </a>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('actividades.update', $actividade->id) }}"  role="form" enctype="multipart/form-data">
