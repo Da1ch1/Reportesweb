@@ -1,6 +1,7 @@
 <?php
 
-
+use App\Http\Controllers\ContribuyenteController;
+use App\Http\Controllers\AvanceController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ReporteController;
@@ -37,8 +38,9 @@ Route::get('Reporte/{reporte}/Edicion', [ReporteController::class, 'edit'])->nam
 Route::put('Reporte/{reporte}/Actualizar', [ReporteController::class, 'update'])->name('menus.update');
 
 //Rutas para area contabilidad
-Route::get('/Contabilidad', [ContabilidadController::class,'index'])->name('contabilidad.inicio');
-
+Route::resource('contribuyentes', App\Http\Controllers\ContribuyenteController::class);
+Route::resource('avances', App\Http\Controllers\AvanceController::class);
+Route::get('/vista', [ContribuyenteController::class, 'vista']) ->name('contribuyente.vista');
 //Rutas para area de ventas
 
 Route::resource('ventas', App\Http\Controllers\VentaController::class);

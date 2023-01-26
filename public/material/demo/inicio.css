@@ -32,7 +32,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: #121722;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://media.discordapp.net/attachments/835159256520065068/1065281457251172354/photo-1618221195710-dd6b41faaea6.jpeg");
+  background-image: url(/material/images/Fondo012023.png);
   background-size: cover;
   background-position: center;
   font-family: "Inter", sans-serif;
@@ -85,9 +85,13 @@ body {
   
   border-radius: 12px;
   padding: 38px;
-  top: 34px;
+  top: 80px;
 }
 
 .sie h3{
     margin-left: -13px;
+}
+
+.siboton{
+  margin-top: 270px;
 }

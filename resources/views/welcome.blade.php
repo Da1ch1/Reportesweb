@@ -16,13 +16,16 @@
     <div class="sie">
         <h1>SIE</h1>
                 <h3>Reportes</h3>
-    </div>            
-    
+    </div>   
+<div class="siboton ">      
+    <div style="display: flex; justify-content: space-between; align-items: center;">   
     <button class="button" onclick="location.href='{{route('menus.visualizacion') }}'">{{ __('Soporte Tecnico') }}</button>
     <button class="button" onclick="location.href='{{route('ventas.index') }}'">{{ __('Ventas') }}</button>
     <button class="button" >Administración</button>
-    <button class="button" onclick="location.href='{{route('contabilidad.inicio') }}'">Contabilidad</button>
+    <button class="button" onclick="location.href='{{url('/vista') }}'">Contabilidad</button>
     <button class="button">Márketing</button>
+    </div>
+</div>
       <script src="{{ asset('material') }}/js/inicio.js"></script>
 </body>
 </html>
