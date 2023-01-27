@@ -35,25 +35,45 @@
                                         <th>No</th>
                                         
 										<th>Cliente</th>
+                                        <th></th>
 										<th>Dia</th>
+                                        <th></th>
 										<th>Contacto</th>
+                                        <th></th>
 										<th>Actividad</th>
+                                        <th></th>
 										<th>Proceso actividad</th>
+                                        <th></th>
 										<th>Atendio</th>
+                                        <th></th>
 										<th>Costo</th>
+                                        <th></th>
 										<th>N° factura</th>
+                                        <th></th>
 										<th>Poliza</th>
+                                        <th></th>
 										<th>Horario</th>
+                                        <th></th>
 										<th>Sistemas</th>
+                                        <th></th>
 										<th>Soporte</th>
+                                        <th></th>
 										<th>Contabilidad</th>
+                                        <th></th>
 										<th>Programacion</th>
+                                        <th></th>
 										<th>Diseño</th>
+                                        <th></th>
 										<th>Mkt</th>
+                                        <th></th>
 										<th>Nom</th>
+                                        <th></th>
 										<th>Equipos</th>
+                                        <th></th>
 										<th>Antivirus</th>
+                                        <th></th>
 										<th>Cursos</th>
+                                        
 
                                         <th></th>
                                     </tr>
@@ -64,24 +84,43 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $venta->cliente->nombre }}</td>
+                                            <th></th>
 											<td>{{ $venta->Dia }}</td>
+                                            <th></th>
 											<td>{{ $venta->contacto->nombre }}</td>
+                                            <th></th>
 											<td>{{ $venta->actividade->actividad }}</td>
+                                            <th></th>
 											<td>{{ $venta->Procesoactividad }}</td>
+                                            <th></th>
 											<td>{{ $venta->Atendio }}</td>
+                                            <th></th>
 											<td>{{ $venta->costo->costos }}</td>
+                                            <th></th>
 											<td>{{ $venta->Nfactura }}</td>
+                                            <th></th>
 											<td>{{ $venta->Poliza }}</td>
+                                            <th></th>
 											<td>{{ $venta->Horario }}</td>
+                                            <th></th>
 											<td>{{ $venta->Sistemas }}</td>
+                                            <th></th>
 											<td>{{ $venta->Soporte }}</td>
+                                            <th></th>
 											<td>{{ $venta->Contabilidad }}</td>
+                                            <th></th>
 											<td>{{ $venta->Programacion }}</td>
+                                            <th></th>
 											<td>{{ $venta->Diseño }}</td>
+                                            <th></th>
 											<td>{{ $venta->MKT }}</td>
+                                            <th></th>
 											<td>{{ $venta->Nom }}</td>
+                                            <th></th>
 											<td>{{ $venta->Equipos }}</td>
+                                            <th></th>
 											<td>{{ $venta->Antivirus }}</td>
+                                            <th></th>
 											<td>{{ $venta->Cursos }}</td>
 
                                             <td>
@@ -92,7 +131,16 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
+
+
+
+
+
                                             </td>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            
                                         </tr>
                                     @endforeach
                                 </tbody>

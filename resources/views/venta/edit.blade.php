@@ -13,7 +13,7 @@
                     <div class="card-header">
                         <span class="card-title">Editar Venta</span>
                         <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
-                            {{ __('Reportes') }}
+                            {{ __('atras') }}
                           </a>
                     </div>
                     <div class="card-body">

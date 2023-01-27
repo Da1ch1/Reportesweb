@@ -63,7 +63,7 @@
 
                                             <td>
                                                 <form action="{{ route('avances.destroy',$avance->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('avances.show',$avance->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('avances.show',$avance->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('avances.edit',$avance->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')

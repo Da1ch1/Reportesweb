@@ -11,7 +11,7 @@
                         <div class="float-left">
                             <span class="card-title">Ver Venta</span>
                             <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
-                                {{ __('Reportes') }}
+                                {{ __('atras') }}
                               </a>
                         </div>
                         
@@ -21,7 +21,7 @@
                         
                         <div class="form-group">
                             <strong>Cliente:</strong>
-                            {{ $venta->cliente_id }}
+                            {{ $venta->cliente->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Dia:</strong>
@@ -29,11 +29,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Contacto:</strong>
-                            {{ $venta->contacto_id }}
+                            {{ $venta->contacto->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Actividad:</strong>
-                            {{ $venta->actividad_id }}
+                            {{ $venta->actividade->actividad }}
                         </div>
                         <div class="form-group">
                             <strong>Proceso actividad:</strong>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Costo:</strong>
-                            {{ $venta->costo_id }}
+                            {{ $venta->costo->costos }}
                         </div>
                         <div class="form-group">
                             <strong>N° factura:</strong>
