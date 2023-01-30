@@ -9,16 +9,15 @@
     <link href="{{ public_path('sass') }}/resources/sass/app.scss" rel="stylesheet" type="text/css">
 
 </head>
-    
+    <!-- Tabla para el PDF -->
 <body class="card">
-    
     <h2>Lista de reportes</h2>
     <div class="table table-stripped table-hover">
         <table >
             <thead>
             <tr>
                 <th>
-                    id
+                    N°
                 </th>
                 <th>
                     Fecha Inicio
@@ -93,13 +92,11 @@
                     </td>
                     <td>
                         {{$reporte->Comentarios}}
-                    </td>
-                    
+                    </td>  
                 </tr>
             @endforeach
             </tbody>
         </table>
-        
     </div> 
     {{$reportes->links()}}
 </body>   

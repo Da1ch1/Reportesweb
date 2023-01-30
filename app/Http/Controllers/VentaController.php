@@ -21,11 +21,13 @@ class VentaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $ventas = Venta::paginate();
+        
 
-        return view('venta.index', compact('ventas'))
-            ->with('i', (request()->input('page', 1) - 1) * $ventas->perPage());
+        return view('venta.index', compact('ventas'));
+        
+            
     }
 
     /**

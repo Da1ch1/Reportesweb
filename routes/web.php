@@ -37,12 +37,16 @@ Route::get('/soporte', [ReporteController::class,'index'])->name('menus.visualiz
 Route::get('Reporte/{reporte}/Edicion', [ReporteController::class, 'edit'])->name('menus.edicion');
 Route::put('Reporte/{reporte}/Actualizar', [ReporteController::class, 'update'])->name('menus.update');
 
+
+
 //Rutas para area contabilidad
 Route::resource('contribuyentes', App\Http\Controllers\ContribuyenteController::class);
 Route::resource('avances', App\Http\Controllers\AvanceController::class);
 Route::get('/vista', [ContribuyenteController::class, 'vista']) ->name('contribuyente.vista');
-//Rutas para area de ventas
 
+
+
+//Rutas para area de ventas
 Route::resource('ventas', App\Http\Controllers\VentaController::class);
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Route::resource('contactos', App\Http\Controllers\ContactoController::class);

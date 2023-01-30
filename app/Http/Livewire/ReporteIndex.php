@@ -38,7 +38,7 @@ class ReporteIndex extends Component
     }
     private function consulta()
     {
-        $query = Reporte::orderByDesc('id');
+        $query = Reporte::OrderBy('id','ASC');
         if( $this->busqueda != '')
         {
             $query->where('Ejecutivo','LIKE', '%'.$this->busqueda.'%')

@@ -15,6 +15,7 @@
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 <body class="card-body">
     
@@ -96,6 +97,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @livewireScripts
     </div>
 </body>
 </html>

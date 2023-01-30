@@ -16,8 +16,8 @@ class ReporteController extends Controller
      */
     public function index()
     {   
-        $reportes = Reporte::paginate();
-        return view('menus.visualizacion');
+        $reporte = Reporte::paginate();
+        return view('menus.visualizacion', compact('reporte'));
         
     }
     public function pdf()
