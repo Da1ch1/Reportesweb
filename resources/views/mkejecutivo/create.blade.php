@@ -1,6 +1,6 @@
-@extends('layouts.ventas')
+@extends('layouts.marketing')
 
-@section('title','Crear Costo')
+@section('title', 'Crear Ejecutivo')
 
 @section('content')
     <section class="content container-fluid">
@@ -11,16 +11,16 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Costo</span>
-                        <a href="{{ route('costos.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                        <span class="card-title">Crear Ejecutivo</span>
+                        <a href="{{ route('mkejecutivos.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
                             {{ __('atras') }}
                           </a>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('costos.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('mkejecutivos.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('costo.form')
+                            @include('mkejecutivo.form')
 
                         </form>
                     </div>

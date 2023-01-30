@@ -8,8 +8,8 @@
         </div>
         <div class="form-group col-sm-3">
             {{ Form::label('Dia') }}
-            {{ Form::text('Dia', $venta->Dia, ['class' => 'form-control' . ($errors->has('Dia') ? ' is-invalid' : ''), 'placeholder' => '']) }}
-            {!! $errors->first('Dia', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::text('Fecha', $venta->Fecha, ['class' => 'form-control' . ($errors->has('Fecha') ? ' is-invalid' : ''), 'placeholder' => '']) }}
+            {!! $errors->first('Fecha', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group col-sm-4">
             {{ Form::label('contacto') }}

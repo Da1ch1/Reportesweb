@@ -41,7 +41,7 @@ class VentaIndex extends Component
         if( $this->busqueda != '')
         {
             $query->where('Atendio','LIKE', '%'.$this->busqueda.'%')
-                        ->orWhere('Dia','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Fecha','LIKE','%'.$this->busqueda. '%')
                         ->orWhereHas('cliente',function($q){
                             $q->where('nombre', 'LIKE', '%'.$this->busqueda.'%');
                         });

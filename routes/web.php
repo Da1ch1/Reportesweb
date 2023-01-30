@@ -8,6 +8,8 @@ use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ActividadeController;
 use App\Http\Controllers\CostoController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\MkejecutivoController;
+use App\Http\Controllers\MarketingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,3 +54,7 @@ Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Route::resource('contactos', App\Http\Controllers\ContactoController::class);
 Route::resource('actividades', App\Http\Controllers\ActividadeController::class);
 Route::resource('costos', App\Http\Controllers\CostoController::class);
+
+//Rutas para area de Marketing
+Route::resource('marketings', App\Http\Controllers\MarketingController::class);
+Route::resource('mkejecutivos', App\Http\Controllers\MkejecutivoController::class);

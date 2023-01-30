@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $cliente_id
- * @property $Dia
+ * @property $Fecha
  * @property $contacto_id
  * @property $actividad_id
  * @property $Procesoactividad
@@ -43,7 +43,7 @@ class Venta extends Model
     
     static $rules = [
 		'cliente_id' => 'required',
-		'Dia' => 'required',
+		'Fecha' => 'required',
 		'contacto_id' => 'required',
 		'actividad_id' => 'required',
 		'Procesoactividad' => 'required',
@@ -72,7 +72,7 @@ class Venta extends Model
      *
      * @var array
      */
-    protected $fillable = ['cliente_id','Dia','contacto_id','actividad_id','Procesoactividad','Vendedor','Atendio','costo_id','Nfactura','Poliza','Horario','Sistemas','Soporte','Contabilidad','Programacion','Diseño','MKT','Nom','Equipos','Antivirus','Cursos'];
+    protected $fillable = ['cliente_id','Fecha','contacto_id','actividad_id','Procesoactividad','Vendedor','Atendio','costo_id','Nfactura','Poliza','Horario','Sistemas','Soporte','Contabilidad','Programacion','Diseño','MKT','Nom','Equipos','Antivirus','Cursos'];
 
 
     /**

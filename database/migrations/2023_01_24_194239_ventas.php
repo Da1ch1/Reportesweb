@@ -17,7 +17,7 @@ return new class extends Migration
             $table->engine="InnoDB";
             $table->bigIncrements('id');
             $table->bigInteger('cliente_id')->unsigned(); //select
-            $table->string('Dia');
+            $table->string('Fecha');
             $table->bigInteger('contacto_id')->unsigned();
             $table->bigInteger('actividad_id')->unsigned();
             $table->string('Procesoactividad');

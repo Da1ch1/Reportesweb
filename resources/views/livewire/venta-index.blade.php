@@ -9,7 +9,7 @@
             </div>
              <div class="float-right">
                 <a href="{{ route('ventas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                  {{ __('+ Crear venta') }}
+                  {{ __('+ Crear') }}
                 </a>
               </div>
         </div>
@@ -81,7 +81,7 @@
                                 <th></th>
                                 <td>{{ $venta->cliente->nombre }}</td>
                                 <th></th>
-                                <td>{{ $venta->Dia}}</td>
+                                <td>{{ $venta->Fecha}}</td>
                                 <th></th>
                                 <td>{{ $venta->contacto->nombre }}</td>
                                 <th></th>

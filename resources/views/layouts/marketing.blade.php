@@ -15,6 +15,7 @@
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 <body class="card-body">
     
@@ -28,16 +29,14 @@
 
                 <div style="margin-left: 425px" class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto" >
                         <!--<li class="nav-item">
                             <a class="nav-link" href="#">{{ __('Reportes') }}</a>
                         </li>-->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contribuyentes.index') }}">{{ __('Contribuyentes') }}</a>
+                            <a class="nav-link" href="{{ route('mkejecutivos.index') }}">{{ __('Ejecutivos') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('avances.index') }}">{{ __('Avances') }}</a>
-                        </li>
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -85,12 +84,13 @@
             <h1>CORPORATIVO</h1>
             <h1>SIE</h1>
             <h3>Solución Integral Empresarial</h3>
-                <h6>Contabilidad</h6> 
+                <h6>Marketing</h6> 
         </section>
       </div>  
         <main class="py-4">
             @yield('content')
         </main>
+        @livewireScripts
     </div>
 </body>
 </html>

@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Dia:</strong>
-                            {{ $venta->Dia }}
+                            {{ $venta->Fecha }}
                         </div>
                         <div class="form-group">
                             <strong>Contacto:</strong>

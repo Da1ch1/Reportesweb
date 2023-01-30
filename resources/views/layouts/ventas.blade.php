@@ -89,9 +89,10 @@
         </nav>
       <div class="card" style="margin: 18px">  
         <section class="et-hero-tabs">   
+            <h1>CORPORATIVO</h1>
             <h1>SIE</h1>
-            <h3>Reportes</h3>
-                <h6>Ventas</h6> 
+            <h3>Solución Integral Empresarial</h3>
+                <h6>Ventas</h6>
         </section>
       </div>  
         <main class="py-4">

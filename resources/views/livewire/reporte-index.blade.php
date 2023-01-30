@@ -3,15 +3,24 @@
         <div style="display: flex; justify-content: space-between; align-items: center;">  
                     <span id="card_title">
                         {{ __('Reportes') }}
-                        <a href="{{route('home')}}" class="btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 12px;" >PDF</a>
-                    &nbsp;
+                       
                     </span>
-                    <div class="col-sm-2" >
-                        <input style="margin-left: -38px;" type="text" name="" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">
+                    <a href="{{route('home')}}" class=" float-center btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 9px;" >PDF</a>
+                    &nbsp;
+                    <div class="float-center col-sm-3 " >
+                        <input  type="text" name="" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">
+                    </div>
+                    <div class="float-center col-mm-1 ">
+                        <select  name="" id="" class="form-select  border-dark-subtle"  wire:model="paginacion">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
                     </div>
                 <div class="float-right">
                       <a href="{{ route('menus.creacion') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                       {{ __('+Crear Reporte') }}
+                       {{ __('+ Crear') }}
                       </a>
                </div>
         </div>

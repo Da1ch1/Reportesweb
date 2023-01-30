@@ -23,7 +23,6 @@
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <!-- Left Side Of Navbar -->
                                 <ul class="navbar-nav me-auto">
@@ -34,11 +33,8 @@
                                         <a class="nav-link" href="#">{{ __('#') }}</a>
                                     </li> -->
                                 </ul>
-
                                 <!-- Right Side Of Navbar -->
                                 <ul class="navbar-nav ms-auto">
-
-
                                     <!-- Links de Registro -->
                                     @guest
                                         @if (Route::has('login'))
@@ -77,10 +73,10 @@
                     </nav>
         <div class="card" style="margin: 18px">
             <section class="et-hero-tabs">   
-                <h1>SIE</h1>
-                <h3>Reportes</h3>
-                    <h6>Soporte Tecnico</h6>
-            
+                <h1>CORPORATIVO</h1>
+            <h1>SIE</h1>
+            <h3>Solución Integral Empresarial</h3>
+                <h6>Soporte Técnico</h6>
             </section>
         </div>    
         <!-- Contenido -->

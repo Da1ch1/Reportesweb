@@ -96,7 +96,7 @@
                                         <th></th>
                                     </tr>
                                     <tr>
-                                        <th>No</th>
+                                        <th>N°</th>
                                         <th class="header">
 										<th>RFC</th>
 										<th>Nombre</th>
