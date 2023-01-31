@@ -21,8 +21,8 @@ class MarketingController extends Controller
     {
         $marketings = Marketing::paginate();
 
-        return view('marketing.index', compact('marketings'))
-            ->with('i', (request()->input('page', 1) - 1) * $marketings->perPage());
+        return view('marketing.index', compact('marketings'));
+            
     }
 
     /**

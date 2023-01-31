@@ -28,15 +28,15 @@
                         </div>
                         <div class="form-group">
                             <strong>Red Social:</strong>
-                            {{ $marketing->red_social }}
+                            {{ $marketing->red_social() }}
                         </div>
                         <div class="form-group">
-                            <strong>Mkejecutivo Id:</strong>
-                            {{ $marketing->mkejecutivo_id }}
+                            <strong>Mkejecutivo:</strong>
+                            {{ $marketing->mkejecutivo->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Estatus:</strong>
-                            {{ $marketing->estatus }}
+                            {{ $marketing->estatus() }}
                         </div>
                         <div class="form-group">
                             <strong>Comentarios:</strong>

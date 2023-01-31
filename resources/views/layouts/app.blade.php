@@ -17,6 +17,7 @@
 <body class="card-body">
     <div id="app">
                     <!-- Barra Navegacion -->  
+                <header>    
                     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                         <div class="container">
                             <button type="button" class="btn btn-dark" onclick="location.href='{{url('/Sie') }}'" style="--bs-btn-padding-y: .39rem; --bs-btn-padding-x: .9rem; --bs-btn-font-size: .59rem; ">Home</button>
@@ -26,15 +27,10 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <!-- Left Side Of Navbar -->
                                 <ul class="navbar-nav me-auto">
-                                   <!-- <li class="nav-item">
-                                        <a class="nav-link" href="#">{{ __('Reportes') }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">{{ __('#') }}</a>
-                                    </li> -->
+                                   
                                 </ul>
                                 <!-- Right Side Of Navbar -->
-                                <ul class="navbar-nav ms-auto">
+                                <ul class="bar navbar-nav ms-auto">
                                     <!-- Links de Registro -->
                                     @guest
                                         @if (Route::has('login'))
@@ -71,6 +67,7 @@
                             </div>
                         </div>
                     </nav>
+                </header>    
         <div class="card" style="margin: 18px">
             <section class="et-hero-tabs">   
                 <h1>CORPORATIVO</h1>
