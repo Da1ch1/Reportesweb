@@ -16,7 +16,7 @@
     </div>
             <!--Codigo de Alerta-->
             @if ($message = Session::get('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-primary">
                     <p>{{ $message }}</p>
                 </div>
             @endif

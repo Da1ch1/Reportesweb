@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('rfc');
             $table->string('nombre');
-            $table->string('regimenf');
+            $table->bigInteger('regimen_id')->unsigned(); //Select
             $table->string('email');
             $table->string('telefono');
             $table->string('factura_contraseña');
@@ -43,6 +43,8 @@ return new class extends Migration
             $table->string('sas_contraseña')->comment('SAS');
             $table->string('extra')->nullable();
             $table->timestamps();
+
+            $table->foreign('regimen_id')->references('id')->on('regimens')->onDelete("cascade");
         });
     }
 

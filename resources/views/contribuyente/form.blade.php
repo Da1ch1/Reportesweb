@@ -13,8 +13,8 @@
         </div>
         <div class="form-group col-sm-3">
             {{ Form::label('Regimen fiscal') }}
-            {{ Form::text('regimenf', $contribuyente->regimenf, ['class' => 'form-control' . ($errors->has('regimenf') ? ' is-invalid' : ''), 'placeholder' => 'Regimen fiscal']) }}
-            {!! $errors->first('regimenf', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::select('regimen_id', $regimens,$contribuyente->regimen_id, ['class' => 'form-control' . ($errors->has('regimen_id') ? ' is-invalid' : ''), 'placeholder' => '']) }}
+            {!! $errors->first('regimen_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group col-sm-3">
             {{ Form::label('Email') }}

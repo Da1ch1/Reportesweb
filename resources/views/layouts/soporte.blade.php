@@ -13,7 +13,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet">
-    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @livewireStyles
@@ -35,16 +34,8 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="bar navbar-nav ms-auto" >
                             <li class="nav-item">
-                                <a class="te nav-link" href="{{ route('contribuyentes.index') }}">{{ __('Contribuyentes') }}</a>
+                                <a class="te nav-link" href="{{ route('spejecutivos.index') }}">{{ __('Ejecutivos +') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="te nav-link" href="{{ route('regimens.index') }}">{{ __('Regimen fiscal') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="te nav-link" href="{{ route('avances.index') }}">{{ __('Avances') }}</a>
-                            </li>
-                           
-                             
                             <!-- Links de Registro -->
                             @guest
                                 @if (Route::has('login'))
@@ -87,7 +78,7 @@
             <h1>CORPORATIVO</h1>
             <h1>SIE</h1>
             <h3>Solución Integral Empresarial</h3>
-                <h6>Contabilidad</h6> 
+                <h6>Ventas</h6>
         </section>
       </div>  
         <main class="py-4">

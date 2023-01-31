@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Regimen;
 use App\Models\Avance;
 use App\Models\Contribuyente;
 use Illuminate\Http\Request;
@@ -22,8 +23,8 @@ class ContribuyenteController extends Controller
     {
         $contribuyentes = Contribuyente::paginate();
 
-        return view('contribuyente.index', compact('contribuyentes'))
-            ->with('i', (request()->input('page', 1) - 1) * $contribuyentes->perPage());
+        return view('contribuyente.index', compact('contribuyentes'));
+            
     }
 
     public function vista()
@@ -40,7 +41,8 @@ class ContribuyenteController extends Controller
     public function create()
     {
         $contribuyente = new Contribuyente();
-        return view('contribuyente.create', compact('contribuyente'));
+        $regimens=Regimen::pluck('regimenfiscal','id');
+        return view('contribuyente.create', compact('contribuyente','regimens'));
     }
 
     /**
@@ -81,8 +83,8 @@ class ContribuyenteController extends Controller
     public function edit($id)
     {
         $contribuyente = Contribuyente::find($id);
-
-        return view('contribuyente.edit', compact('contribuyente'));
+        $regimens=Regimen::pluck('regimenfiscal','id');
+        return view('contribuyente.edit', compact('contribuyente','regimens'));
     }
 
     /**

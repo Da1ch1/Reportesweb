@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegimenController;
 use App\Http\Controllers\ContribuyenteController;
 use App\Http\Controllers\AvanceController;
 use App\Http\Controllers\VentaController;
@@ -10,6 +11,8 @@ use App\Http\Controllers\CostoController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\MkejecutivoController;
 use App\Http\Controllers\MarketingController;
+use App\Http\Controllers\SpejecutivogController;
+use App\Http\Controllers\SoporteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +33,8 @@ Route::get('/Sie', function () {
 
 
 //Rutas para area de Soporte
+Route::resource('spejecutivos', App\Http\Controllers\SpejecutivoController::class);
+Route::resource('soportes', App\Http\Controllers\SoporteController::class);
 Route::get('reportes/pdf', [ReporteController::class, 'pdf'])->name('home');
 Route::get('Reporte/{reporte}/Ver', [ReporteController::class, 'show'])->name('menus.show');
 Route::get('Crear', [ReporteController::class,'create'])->name('menus.creacion');
@@ -43,6 +48,7 @@ Route::put('Reporte/{reporte}/Actualizar', [ReporteController::class, 'update'])
 
 //Rutas para area contabilidad
 Route::resource('contribuyentes', App\Http\Controllers\ContribuyenteController::class);
+Route::resource('regimens', App\Http\Controllers\RegimenController::class);
 Route::resource('avances', App\Http\Controllers\AvanceController::class);
 Route::get('/vista', [ContribuyenteController::class, 'vista']) ->name('contribuyente.vista');
 

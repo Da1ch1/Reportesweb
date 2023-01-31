@@ -27,9 +27,9 @@
     </div> 
     <!--Codigo de Alerta-->
                 @if ($message = Session::get('success'))
-                                <div class="alert alert-success">
-                                <p>{{ $message }}</p>
-                            </div>
+                    <div class="alert alert-primary">
+                        <p>{{ $message }}</p>
+                    </div>
                 @endif
      <!--Tabla de Reportes Soporte Tecnico-->           
     <div class="card-body">

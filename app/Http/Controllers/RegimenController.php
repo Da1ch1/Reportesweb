@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contribuyente;
-use App\Models\Avance;
+use App\Models\Regimen;
 use Illuminate\Http\Request;
 
 /**
- * Class AvanceController
+ * Class RegimenController
  * @package App\Http\Controllers
  */
-class AvanceController extends Controller
+class RegimenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +18,10 @@ class AvanceController extends Controller
      */
     public function index()
     {
-        $avances = Avance::paginate();
+        $regimens = Regimen::paginate();
 
-        return view('avance.index', compact('avances'));
+        return view('regimen.index', compact('regimens'))
+            ->with('i', (request()->input('page', 1) - 1) * $regimens->perPage());
     }
 
     /**
@@ -31,9 +31,8 @@ class AvanceController extends Controller
      */
     public function create()
     {
-        $avance = new Avance();
-        $contribuyentes=Contribuyente::pluck('rfc','id');
-        return view('avance.create', compact('avance','contribuyentes'));
+        $regimen = new Regimen();
+        return view('regimen.create', compact('regimen'));
     }
 
     /**
@@ -44,12 +43,12 @@ class AvanceController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Avance::$rules);
+        request()->validate(Regimen::$rules);
 
-        $avance = Avance::create($request->all());
+        $regimen = Regimen::create($request->all());
 
-        return redirect()->route('avances.index')
-            ->with('success', 'Avance created successfully.');
+        return redirect()->route('regimens.index')
+            ->with('success', 'Regimen created successfully.');
     }
 
     /**
@@ -60,9 +59,9 @@ class AvanceController extends Controller
      */
     public function show($id)
     {
-        $avance = Avance::find($id);
+        $regimen = Regimen::find($id);
 
-        return view('avance.show', compact('avance'));
+        return view('regimen.show', compact('regimen'));
     }
 
     /**
@@ -73,26 +72,26 @@ class AvanceController extends Controller
      */
     public function edit($id)
     {
-        $avance = Avance::find($id);
-        $contribuyentes=Contribuyente::pluck('rfc','id');
-        return view('avance.edit', compact('avance', 'contribuyentes'));
+        $regimen = Regimen::find($id);
+
+        return view('regimen.edit', compact('regimen'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Avance $avance
+     * @param  Regimen $regimen
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Avance $avance)
+    public function update(Request $request, Regimen $regimen)
     {
-        request()->validate(Avance::$rules);
+        request()->validate(Regimen::$rules);
 
-        $avance->update($request->all());
+        $regimen->update($request->all());
 
-        return redirect()->route('avances.index')
-            ->with('success', 'Avance updated successfully');
+        return redirect()->route('regimens.index')
+            ->with('success', 'Regimen updated successfully');
     }
 
     /**
@@ -102,9 +101,9 @@ class AvanceController extends Controller
      */
     public function destroy($id)
     {
-        $avance = Avance::find($id)->delete();
+        $regimen = Regimen::find($id)->delete();
 
-        return redirect()->route('avances.index')
-            ->with('success', 'Avance deleted successfully');
+        return redirect()->route('regimens.index')
+            ->with('success', 'Regimen deleted successfully');
     }
 }
