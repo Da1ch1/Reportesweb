@@ -136,4 +136,7 @@ header{
     }
 }
 
-/* Loaging*/
+/*Tablas Contribuyente*/
+thead tr .testo{
+    font: #fff;
+}

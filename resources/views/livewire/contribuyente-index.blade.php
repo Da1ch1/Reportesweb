@@ -42,45 +42,59 @@
                         <th></th>
                         </th>
                         <!--SAT-->
-                        <th class="header"> 
-                        <th style="background-color: #d1ffd1">SAT</th>
-                        <th style="background-color: #d1ffd1"></th>
-                        <th style="background-color: #d1ffd1"></th>
+                        <th class="header testo"> 
+                        <th style="background-color: #209de6"></th>
+                        <th style="text-align:center; color: #ffffff ; background-color:#209de6">SAT</th>
+                        <th style="background-color: #209de6"></th>
                         </th>
                         <!--IMSS-->
                         <th class="header">
-                        <th>IMSS</th>
-                        <th></th> 
+                            <th></th>   
+                            <th style="text-align:start">IMSS</th>
+                            <th></th>
+                            <th></th>
                         </th>
                         <!--IDSE-->
                         <th class="header">
-                        <th style="background-color: #d1ffd1">IDSE</th>
-                        <th style="background-color: #d1ffd1"></th>
+                        <th style="background-color: #209de6"></th>
+                        <th style="text-align:start;color: #ffffff ; background-color:#209de6">IDSE</th>
+                        <th style="background-color: #209de6"></th>
                         </th>
                         <!--SIPARE-->
                         <th class="header">
-                        <th>SIPARE</th>
-                        <th></th>
+                            <th></th>   
+                            <th style="text-align:start">SAPIRE</th>
+                            <th></th>
+                            <th></th>
                         </th>
                         <!--2% NOM-->
                         <th class="header">
-                        <th style="background-color: #d1ffd1">2% NOM</th>
-                        <th style="background-color: #d1ffd1"></th>
+                        <th style="text-align:end; color:#ffffff; background-color: #209de6">2%</th> 
+                        <th style="background-color: #209de6"></th>   
+                        <th style="text-align: start; color: #ffffff ; background-color:#209de6">NOM</th>
+                        <th style="background-color: #209de6"></th>
                         </th>
                         <!--Infonavit-->
                         <th class="header">
-                        <th>Infonavit</th>
+                        <th></th>   
+                        <th style="text-align:start">Infonavit</th>
+                        <th></th>
                         <th></th>
                         </th>
                         <!--CITAS JAL-->
                         <th class="header">
-                        <th style="background-color: #d1ffd1">CITAS JAL</th>
-                        <th style="background-color: #d1ffd1"></th>
+                        <th style="background-color: #209de6"></th> 
+                        <th style="text-align:left; color: #ffffff ; background-color:#209de6">CITAS JAL</th>
+                        <th style="background-color: #209de6"></th>
+                        <th style="background-color: #209de6"></th>
+                        
                         </th>
                         <!--SAS-->
                         <th class="header">
-                        <th>SAS</th>
-                        <th></th>
+                            <th></th>   
+                            <th style="text-align:start">SAS</th>
+                            <th></th>
+                            <th></th>
                         </th>
                         <!---->
                         <th></th>
@@ -110,37 +124,51 @@
                         <!--IMSS-->
                         <th class="header border">
                         <th>Usuario</th>
-                        <th>Contraseña</th> 
+                        <th>Contraseña</th>
+                        <th></th>
+                        <th></th> 
                         </th>
                         <!--IDSE-->
-                        <th class="header border">
+                        <th class="header border">   
                         <th>Usuario</th>
                         <th>Contraseña</th>
+                        <th></th>
+                        
                         </th>
                         <!--SIPARE-->
                         <th class="header border">
                         <th>Usuario</th>
                         <th>Contraseña</th>
+                        <th></th>
+                        <th></th>
                         </th>
                         <!--2% NOM-->
-                        <th class="header border">
+                        <th class="header border">   
                         <th>Usuario</th>
-                        <th>Contraseña</th>
+                        <th></th>
+                        <th>Contraseña</th> 
+                        <th></th>
                         </th>
                         <!--Infonavit-->
                         <th class="header border">
                         <th>Usuario</th>
                         <th>Contraseña</th>
+                        <th></th>
+                        <th></th>
                         </th>
                         <!--CITAS JAL-->
                         <th class="header border">
                         <th>Usuario</th>
                         <th>Contraseña</th>
+                        <th></th>
+                        <th></th>
                         </th>
                         <!--SAS-->
                         <th class="header border">
                         <th>Usuario</th>
                         <th>Contraseña</th>
+                        <th></th>
+                        <th></th>
                         </th>
                         <!---->
                         <td class="header border">
@@ -177,36 +205,49 @@
                             <td class="border">
                             <td>{{ $contribuyente->ev_imss_usuario}}</td>
                             <td>{{ $contribuyente->ev_imss_contraseña}}</td>
+                            <td></td>
+                            <td></td>
                             </td>
                             <!--IDSE-->
-                            <td class="border">
+                            <td class="border">    
                             <td>{{ $contribuyente->idse_usuario}}</td>
                             <td>{{ $contribuyente->idse_contraseña}}</td>
+                            <td></td>
                             </td>
                             <!--SIPARE-->
                             <td class="border">
                             <td>{{ $contribuyente->sipare_usuario}}</td>
                             <td>{{ $contribuyente->sipare_contraseña}}</td>
+                            <td></td>
+                            <td></td>
                             </td>
                             <!--NOM-->
                             <td class="border">
                             <td>{{ $contribuyente->usuario_2}}</td>
+                            <td></td>
                             <td>{{ $contribuyente->contraseña_2}}</td>
+                            <td></td>
                             </td>
                             <!--Infonavit-->
                             <td class="border">
                             <td>{{ $contribuyente->infonavit_usuario}}</td>
                             <td>{{ $contribuyente->infonavit_contraseña}}</td>
+                            <td></td>
+                            <td></td>
                             </td>
                             <!--CITAS JAL-->
                             <td class="border">
                             <td>{{ $contribuyente->citas_jal_usuario}}</td>
                             <td>{{ $contribuyente->citas_jal_contraseña}}</td>
+                            <td></td>
+                            <td></td>
                             </td>
                             <!--SAS-->
                             <td class="border">
                             <td>{{ $contribuyente->sas_usuario}}</td>
                             <td>{{ $contribuyente->sas_contraseña}}</td>
+                            <td></td>
+                            <td></td>
                             </td>
                             <td class="border"></td>
                             <td></td>
