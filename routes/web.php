@@ -11,7 +11,8 @@ use App\Http\Controllers\CostoController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\MkejecutivoController;
 use App\Http\Controllers\MarketingController;
-use App\Http\Controllers\SpejecutivogController;
+use App\Http\Controllers\StatController;
+use App\Http\Controllers\SpejecutivoController;
 use App\Http\Controllers\SoporteController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::get('/Sie', function () {
 
 
 //Rutas para area de Soporte
+Route::resource('stats', App\Http\Controllers\StatController::class);
 Route::resource('spejecutivos', App\Http\Controllers\SpejecutivoController::class);
 Route::resource('soportes', App\Http\Controllers\SoporteController::class);
 Route::get('reportes/pdf', [ReporteController::class, 'pdf'])->name('home');

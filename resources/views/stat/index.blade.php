@@ -1,7 +1,6 @@
 @extends('layouts.soporte')
 
-@section('title','Ejecutivo')
-
+@section('title','Estatus')
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -11,14 +10,14 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Ejecutivo') }}
+                                {{ __('Estatus') }}
                                 <a href="{{ route('soportes.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
                                     {{ __('vista') }}
                                   </a>
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('spejecutivos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('stats.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('+ Crear') }}
                                 </a>
                               </div>
@@ -37,22 +36,22 @@
                                     <tr>
                                         <th>N°</th>
                                         
-										<th>Nombre</th>
+										<th>Estatus</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($spejecutivos as $spejecutivo)
+                                    @foreach ($stats as $stat)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $spejecutivo->nombre }}</td>
+											<td>{{ $stat->estatus }}</td>
 
                                             <td>
-                                                <form action="{{ route('spejecutivos.destroy',$spejecutivo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('spejecutivos.show',$spejecutivo->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('spejecutivos.edit',$spejecutivo->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('stats.destroy',$stat->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('stats.show',$stat->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('stats.edit',$stat->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -65,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $spejecutivos->links() !!}
+                {!! $stats->links() !!}
             </div>
         </div>
     </div>

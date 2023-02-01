@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Soporte;
 use App\Models\Spejecutivo;
+use App\Models\Stat;
+use App\Models\Soporte;
 use Illuminate\Http\Request;
 
 /**
@@ -34,7 +35,8 @@ class SoporteController extends Controller
     {
         $soporte = new Soporte();
         $spejecutivos=Spejecutivo::pluck('nombre','id');
-        return view('soporte.create', compact('soporte','spejecutivos'));
+        $stats=Stat::pluck('estatus','id');
+        return view('soporte.create', compact('soporte','spejecutivos','stats'));
     }
 
     /**
@@ -76,7 +78,8 @@ class SoporteController extends Controller
     {
         $soporte = Soporte::find($id);
         $spejecutivos=Spejecutivo::pluck('nombre','id');
-        return view('soporte.edit', compact('soporte','spejecutivo'));
+        $stats=Stat::pluck('estatus','id');
+        return view('soporte.edit', compact('soporte','spejecutivos','stats'));
     }
 
     /**

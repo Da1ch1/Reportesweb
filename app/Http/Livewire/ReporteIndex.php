@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Reporte;
+use App\Models\Soporte;
+use App\Models\Stat;
+use App\Models\Spejecutivo;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -21,29 +23,38 @@ class ReporteIndex extends Component
     public function render()
     {
         
-        $reportes = $this->consulta();
-        $reportes = $reportes->paginate($this->paginacion);
-        if( $reportes->currentPage() > $reportes->lastPage())
+        $soportes = $this->consulta();
+        $soportes = $soportes->paginate($this->paginacion);
+        if( $soportes->currentPage() > $soportes->lastPage())
         {
             $this->resetPage();
-            $reportes = $this->consulta();
+            $soportes = $this->consulta();
             
-            $reportes = $reportes->paginate($this->paginacion);
+            $soportes = $soportes->paginate($this->paginacion);
         }
         $params = [
-            'reportes' => $reportes,
+            'soportes' => $soportes,
         ];
         return view('livewire.reporte-index', $params);
         
     }
     private function consulta()
     {
-        $query = Reporte::OrderBy('id','ASC');
+        $query = Soporte::OrderBy('id','ASC');
         if( $this->busqueda != '')
         {
-            $query->where('Ejecutivo','LIKE', '%'.$this->busqueda.'%')
-                        ->orWhere('Fecha_inicio','LIKE','%'.$this->busqueda. '%')
-                        ->orWhere('Cliente','LIKE','%'.$this->busqueda. '%');
+            $query->where('Fecha_inicio','LIKE', '%'.$this->busqueda.'%')
+                        ->orWhere('Fecha_fin','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Cliente','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('PostVenta','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Evidencia','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Comentarios','LIKE','%'.$this->busqueda. '%')
+                        ->orWhereHas('Spejecutivo',function($q){
+                            $q->where('nombre', 'LIKE', '%'.$this->busqueda.'%');
+                        })
+                        ->orWhereHas('Stat',function($q){
+                            $q->where('estatus', 'LIKE', '%'.$this->busqueda.'%');
+                        });
         }
         return $query;
     }

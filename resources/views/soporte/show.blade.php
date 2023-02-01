@@ -1,6 +1,6 @@
 @extends('layouts.soporte')
 
-@section('title','Ver Reporte')
+@section('title','Ver Soporte')
 
 @section('content')
     <section class="content container-fluid">
@@ -9,10 +9,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Ver Reporte</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('soportes.index') }}"> Back</a>
+                            <span class="card-title">Ver Soporte</span>
+                            <a href="{{ route('soportes.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                                {{ __('atras') }}
+                              </a>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Estatus:</strong>
-                            {{ $soporte->spejecutivo_id }}
+                            {{ $soporte->stat_id }}
                         </div>
                         <div class="form-group">
                             <strong>Evidencia:</strong>

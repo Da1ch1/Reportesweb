@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Spejecutivo
+ * Class Stat
  *
  * @property $id
- * @property $nombre
+ * @property $estatus
  * @property $created_at
  * @property $updated_at
  *
@@ -16,11 +16,11 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Spejecutivo extends Model
+class Stat extends Model
 {
     
     static $rules = [
-		'nombre' => 'required',
+		'estatus' => 'required',
     ];
 
     protected $perPage = 20;
@@ -30,7 +30,7 @@ class Spejecutivo extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre'];
+    protected $fillable = ['estatus'];
 
 
     /**
@@ -38,7 +38,7 @@ class Spejecutivo extends Model
      */
     public function soportes()
     {
-        return $this->hasMany('App\Models\Soporte', 'spejecutivo_id', 'id');
+        return $this->hasMany('App\Models\Soporte', 'stat_id', 'id');
     }
     
 

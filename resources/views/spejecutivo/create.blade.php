@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.soporte')
 
-@section('template_title')
-    Create Spejecutivo
-@endsection
+@section('title','Crear Ejecutivo')
 
 @section('content')
     <section class="content container-fluid">
@@ -13,7 +11,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Spejecutivo</span>
+                        <span class="card-title">Crear Ejecutivo</span>
+                        <a href="{{ route('spejecutivos.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                            {{ __('atras') }}
+                          </a>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('spejecutivos.store') }}"  role="form" enctype="multipart/form-data">

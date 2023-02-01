@@ -34,7 +34,10 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="bar navbar-nav ms-auto" >
                             <li class="nav-item">
-                                <a class="te nav-link" href="{{ route('spejecutivos.index') }}">{{ __('Ejecutivos +') }}</a>
+                                <a class="te nav-link" href="{{ route('spejecutivos.index') }}">{{ __('Ejecutivos') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="te nav-link" href="{{ route('stats.index') }}">{{ __('Estatus') }}</a>
                             </li>
                             <!-- Links de Registro -->
                             @guest
@@ -78,7 +81,7 @@
             <h1>CORPORATIVO</h1>
             <h1>SIE</h1>
             <h3>Solución Integral Empresarial</h3>
-                <h6>Ventas</h6>
+                <h6>Soporte Técnico</h6>
         </section>
       </div>  
         <main class="py-4">

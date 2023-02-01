@@ -23,12 +23,14 @@ return new class extends Migration
             $table->string('Cliente');
             $table->string('Asunto');
             $table->bigInteger('spejecutivo_id')->unsigned(); //select
+            $table->bigInteger('stat_id')->unsigned(); //select
             $table->string('Evidencia')->nullable();
             $table->string('PostVenta');
             $table->string('Comentarios');
             $table->timestamps();
 
             $table->foreign('spejecutivo_id')->references('id')->on('spejecutivos')->onDelete("cascade");
+            $table->foreign('stat_id')->references('id')->on('stats')->onDelete("cascade");
         });
     }
 

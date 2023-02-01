@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $Cliente
  * @property $Asunto
  * @property $spejecutivo_id
+ * @property $stat_id
  * @property $Evidencia
  * @property $PostVenta
  * @property $Comentarios
@@ -22,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property Spejecutivo $spejecutivo
+ * @property Stat $stat
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -36,6 +38,7 @@ class Soporte extends Model
 		'Cliente' => 'required',
 		'Asunto' => 'required',
 		'spejecutivo_id' => 'required',
+		'stat_id' => 'required',
 		'PostVenta' => 'required',
 		'Comentarios' => 'required',
     ];
@@ -47,7 +50,7 @@ class Soporte extends Model
      *
      * @var array
      */
-    protected $fillable = ['Fecha_inicio','Fecha_fin','Hora_inicio','Hora_fin','Cliente','Asunto','spejecutivo_id','Evidencia','PostVenta','Comentarios'];
+    protected $fillable = ['Fecha_inicio','Fecha_fin','Hora_inicio','Hora_fin','Cliente','Asunto','spejecutivo_id','stat_id','Evidencia','PostVenta','Comentarios'];
 
 
     /**
@@ -56,6 +59,14 @@ class Soporte extends Model
     public function spejecutivo()
     {
         return $this->hasOne('App\Models\Spejecutivo', 'id', 'spejecutivo_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function stat()
+    {
+        return $this->hasOne('App\Models\Stat', 'id', 'stat_id');
     }
     
 
