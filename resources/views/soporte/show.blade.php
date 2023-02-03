@@ -44,11 +44,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Ejecutivo:</strong>
-                            {{ $soporte->spejecutivo_id }}
+                            {{ $soporte->spejecutivo->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Estatus:</strong>
-                            {{ $soporte->stat_id }}
+                            {{ $soporte->stat->estatus }}
                         </div>
                         <div class="form-group">
                             <strong>Evidencia:</strong>

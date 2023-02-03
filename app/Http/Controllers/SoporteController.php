@@ -6,6 +6,8 @@ use App\Models\Spejecutivo;
 use App\Models\Stat;
 use App\Models\Soporte;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
+use PDF;
 
 /**
  * Class SoporteController
@@ -22,10 +24,15 @@ class SoporteController extends Controller
     {
         $soportes = Soporte::paginate();
 
-        return view('soporte.index', compact('soportes'))
-            ->with('i', (request()->input('page', 1) - 1) * $soportes->perPage());
+        return view('soporte.index', compact('soportes'));
     }
 
+    public function pdf()
+    {  $soportes = Soporte::paginate(10);
+        $pdf=PDF::loadView('home',['soportes'=>$soportes]);
+        return $pdf->stream();
+        
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -5,7 +5,6 @@ use App\Http\Controllers\ContribuyenteController;
 use App\Http\Controllers\AvanceController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\ClienteController;
-use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ActividadeController;
 use App\Http\Controllers\CostoController;
 use App\Http\Controllers\ContactoController;
@@ -37,14 +36,8 @@ Route::get('/Sie', function () {
 Route::resource('stats', App\Http\Controllers\StatController::class);
 Route::resource('spejecutivos', App\Http\Controllers\SpejecutivoController::class);
 Route::resource('soportes', App\Http\Controllers\SoporteController::class);
-Route::get('reportes/pdf', [ReporteController::class, 'pdf'])->name('home');
-Route::get('Reporte/{reporte}/Ver', [ReporteController::class, 'show'])->name('menus.show');
-Route::get('Crear', [ReporteController::class,'create'])->name('menus.creacion');
-Route::post('guardar', [ReporteController::class, 'store'])->name('menus.store');
-Route::get('/soporte', [ReporteController::class,'index'])->name('menus.visualizacion');
-//Route::view('Edición','menus/edicion')->name('edicion');
-Route::get('Reporte/{reporte}/Edicion', [ReporteController::class, 'edit'])->name('menus.edicion');
-Route::put('Reporte/{reporte}/Actualizar', [ReporteController::class, 'update'])->name('menus.update');
+Route::get('reportes/pdf', [SoporteController::class, 'pdf'])->name('home');
+
 
 
 

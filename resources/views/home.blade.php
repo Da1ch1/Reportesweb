@@ -6,98 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PDF</title>
          <!-- stilos bootstrap -->
-    <link href="{{ public_path('sass') }}/resources/sass/app.scss" rel="stylesheet" type="text/css">
-
+        <link href="{{ public_path('/material/demo/demo.css')}}" rel="stylesheet" type="text/css">
 </head>
     <!-- Tabla para el PDF -->
 <body class="card">
     <h2>Lista de reportes</h2>
-    <div class="table table-stripped table-hover">
-        <table >
-            <thead>
-            <tr>
-                <th>
-                    N°
-                </th>
-                <th>
-                    Fecha Inicio
-                </th>
-                <th>
-                    Fecha Fin
-                </th>
-                <th>
-                    Hora Inicio
-                </th>
-                <th>
-                    Hora Fin
-                </th>
-                <th>
-                    Cliente
-                </th>
-                <th>
-                    Asunto
-                </th>
-                <th>
-                    Ejecutivo
-                </th>
-                <th>
-                    Estatus
-                </th>
-                <th>
-                    Evidencia
-                </th>
-                <th>
-                    Post-Venta
-                </th>
-                <th>
-                    Comentarios
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-                @foreach ($reportes as $reporte)
-                <tr>
-                    <td>
-                        {{$reporte->id}}
-                    </td>
-                    <td>
-                        {{$reporte->Fecha_inicio->format('d-m-y')}}
-                    </td>
-                    <td>
-                        {{$reporte->Fecha_fin->format('d-m-y')}}
-                    </td>
-                    <td>
-                        {{$reporte->Hora_inicio}}
-                    </td>
-                    <td>
-                        {{$reporte->Hora_fin}}
-                    </td>
-                    <td>
-                        {{$reporte->Cliente}}
-                    </td>
-                    <td>
-                        {{$reporte->Asunto}}
-                    </td>
-                    <td>
-                        {{$reporte->Ejecutivo()}}
-                    </td>
-                    <td>
-                        {{$reporte->Estatus()}}
-                    </td>
-                    <td>
-                        {{$reporte->Evidencia}}
-                    </td>
-                    <td>
-                        {{$reporte->PostVenta}}
-                    </td>
-                    <td>
-                        {{$reporte->Comentarios}}
-                    </td>  
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-    </div> 
-    {{$reportes->links()}}
+    
+            <table class="table table-striped table-hover">
+                <thead class="thead">
+                    <tr>
+                        <th>N°</th>   
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Hora Inicio</th>
+                        <th>Hora Fin</th>
+                        <th>Cliente</th>
+                        <th>Asunto</th>
+                        <th>Ejecutivo</th>
+                        <th>Estatus</th>
+                        <th>Evidencia</th>
+                        <th>Post venta</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($soportes as $soporte)
+                        <tr>
+                            <td>{{ $soporte->id }}</td>
+                            <td>{{ $soporte->Fecha_inicio }}</td>
+                            <td>{{ $soporte->Fecha_fin }}</td>
+                            <td>{{ $soporte->Hora_inicio }}</td>
+                            <td>{{ $soporte->Hora_fin }}</td>
+                            <td>{{ $soporte->Cliente }}</td>
+                            <td>{{ $soporte->Asunto }}</td>
+                            <td>{{ $soporte->spejecutivo->nombre }}</td>
+                            <td>{{ $soporte->stat->estatus }}</td>
+                            <td>{{ $soporte->Evidencia }}</td>
+                            <td>{{ $soporte->PostVenta }}</td>
+                            <td>{{ $soporte->Comentarios }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+    {!! $soportes->links() !!}
 </body>   
 </html>
