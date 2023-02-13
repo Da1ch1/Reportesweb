@@ -10,13 +10,13 @@ class ContribuyenteIndex extends Component
 {
     use WithPagination;
     public $busqueda = '';
-    public $paginacion = 10;
+    public $paginacion = 20;
     protected $paginationTheme = 'bootstrap';
     protected $queryString =
     
         [
             'busqueda' => ['except' => ''],
-            'paginacion' => ['except' => 10],
+            'paginacion' => ['except' => 20],
         ];  
     public function render()
     {

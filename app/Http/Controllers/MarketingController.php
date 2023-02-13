@@ -19,7 +19,7 @@ class MarketingController extends Controller
      */
     public function index()
     {
-        $marketings = Marketing::paginate();
+        $marketings = Marketing::paginate(20);
 
         return view('marketing.index', compact('marketings'));
             

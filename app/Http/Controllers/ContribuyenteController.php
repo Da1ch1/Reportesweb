@@ -21,7 +21,7 @@ class ContribuyenteController extends Controller
      */
     public function index()
     {
-        $contribuyentes = Contribuyente::paginate();
+        $contribuyentes = Contribuyente::paginate(20);
 
         return view('contribuyente.index', compact('contribuyentes'));
             

@@ -22,7 +22,7 @@ class SoporteController extends Controller
      */
     public function index()
     {
-        $soportes = Soporte::paginate();
+        $soportes = Soporte::paginate(20);
 
         return view('soporte.index', compact('soportes'));
     }

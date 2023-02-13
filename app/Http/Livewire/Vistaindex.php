@@ -7,7 +7,7 @@ use App\Models\Contribuyente;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class AvanceIndex extends Component
+class VistaIndex extends Component
 {
     use WithPagination;
     public $busqueda = '';
@@ -33,7 +33,7 @@ class AvanceIndex extends Component
         $params = [
             'avances' => $avances,
         ];
-        return view('livewire.avance-index',$params)
+        return view('livewire.vista-index',$params)
         ->with('i', (request()->input('page', 1)-1)*$avances->perPage());
         
     }

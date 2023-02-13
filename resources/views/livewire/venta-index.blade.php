@@ -4,9 +4,7 @@
             <span id="card_title">
                 {{ __('Venta') }}
             </span>
-            <div class="col-sm-1">
-                <button onclick="exportTableToExcel('tblData', 'Tabla_Ventas')" class=" float-center btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 9px;">Export Table</button>
-            </div>
+            
             <div class="col-sm-1" >
                 <input style="margin-left: 15px" type="text" name="busqueda" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">   
             </div>
@@ -36,7 +34,7 @@
     <div class="card-header">      
         <div class="card-body">
             <div class="table-responsive">
-                 <table class="table table-striped table-hover" id="tblData">
+                 <table class="table table-striped table-hover" id="vista">
                     <thead class="thead">
                          <tr>
                             <th></th>
@@ -81,6 +79,7 @@
                             <th>Antivirus</th>
                             <th></th>
                             <th>Cursos</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -139,9 +138,6 @@
                                         <button type="submit" class="btn btn-danger btn-sm" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                     </form>
                                 </td>
-                                <th></th>
-                                <th></th>
-                                <th></th>
                             </tr>
                         @endforeach
                     </tbody>

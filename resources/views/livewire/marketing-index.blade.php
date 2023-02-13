@@ -5,9 +5,6 @@
             <span id="card_title">
                 {{ __('Marketing') }}
             </span>
-            <div class="col-sm-1">
-                <button onclick="exportTableToExcel('tblData', 'Tabla_Marketing')" class=" float-center btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 9px;">Export Table</button>
-            </div>
             <div class="col-sm-1" >
                 <input  type="text" name="busqueda" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">   
             </div>
@@ -34,7 +31,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped table-hover" id="tblData">
+            <table class="table table-striped table-hover" id="example">
                 <thead class="thead">
                     <tr>
                         <th>N°</th>

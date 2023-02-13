@@ -9,6 +9,9 @@
 
     <title>@yield('title')</title>
 
+     <!--Links de exportacion Excel-->
+     <link href="{{ asset('material') }}/demo/excel.css" rel="stylesheet">
+     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">

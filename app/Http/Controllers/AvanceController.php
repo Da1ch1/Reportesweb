@@ -19,7 +19,7 @@ class AvanceController extends Controller
      */
     public function index()
     {
-        $avances = Avance::paginate();
+        $avances = Avance::paginate(20);
 
         return view('avance.index', compact('avances'));
     }

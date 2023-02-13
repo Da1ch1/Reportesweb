@@ -13,11 +13,10 @@
             </div>
             <div class="float-center col-mm-1 ">
                 <select  name="" id="" class="form-select  border-dark-subtle"  wire:model="paginacion">
-                    <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
-                    
+                    <option value="200">200</option>
                 </select>
             </div>
              <div class="float-right">
@@ -54,7 +53,7 @@
                 <tbody>
                     @foreach ($avances as $avance)
                         <tr>
-                            <td>{{ $avance->id }}</td>
+                            <td>{{ ++$i }}</td>
                             
                             
                             <td>{{ $avance->contribuyente->nombre }}</td>

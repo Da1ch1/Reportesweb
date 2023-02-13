@@ -18,7 +18,7 @@ class CostoController extends Controller
      */
     public function index()
     {
-        $costos = Costo::paginate();
+        $costos = Costo::paginate(20);
 
         return view('costo.index', compact('costos'))
             ->with('i', (request()->input('page', 1) - 1) * $costos->perPage());

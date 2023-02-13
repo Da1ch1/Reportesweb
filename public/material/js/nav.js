@@ -145,6 +145,7 @@ function exportTableToExcel(tableID, filename = ''){
 $(document).ready(function () {
     $('#example').DataTable({
         dom: '<"top"B>r<"bottom">',
+        pageLength: 20,
         buttons:{
             dom:{
                 button:{
@@ -154,10 +155,21 @@ $(document).ready(function () {
             buttons:[
                 {
                     extend:"excel",
-                    text:"Excel",
+                    text:'<i class="fa fa-file-excel-o">Excel</i>',
                     className: 'btn btn-dark ',
                     excelStyles:{
                         template: 'header_blue'
+                    }
+                },
+
+                {
+                    extend: 'pdf',
+                    text: '<i class="fa fa-file-pdf-o">pdf</i>',
+                    className: 'btn btn-danger ',
+                    exportOptions: {
+                        modifier: {
+                            page: 'current'
+                        }
                     }
                 }
             ]
@@ -167,7 +179,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('#vista').DataTable({
-        dom: 'Bfrt',
+        dom: 'Brt',
+        pageLength: 20,
         buttons: {
             dom:{
                 button:{
@@ -178,7 +191,7 @@ $(document).ready(function () {
             
                 {
                     extend:"excel",
-                    text:"Excel",
+                    text:'<i class="fa fa-file-excel-o">Excel</i>',
                     className: 'btn btn-dark ',
                     excelStyles:{
                         template: 'header_blue'
@@ -187,7 +200,7 @@ $(document).ready(function () {
 
                 {
                     extend: 'pdf',
-                    text: 'PDF',
+                    text: '<i class="fa fa-file-pdf-o">pdf</i>',
                     className: 'btn btn-danger ',
                     exportOptions: {
                         modifier: {

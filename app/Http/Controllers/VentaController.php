@@ -22,7 +22,7 @@ class VentaController extends Controller
      */
     public function index()
     {   
-        $ventas = Venta::paginate();
+        $ventas = Venta::paginate(20);
         
 
         return view('venta.index', compact('ventas'));
