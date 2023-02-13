@@ -10,13 +10,13 @@ class MarketingIndex extends Component
 {
     use WithPagination;
     public $busqueda = '';
-    public $paginacion = 10;
+    public $paginacion = '20';
     protected $paginationTheme = 'bootstrap';
     protected $queryString =
     
         [
             'busqueda' => ['except' => ''],
-            'paginacion' => ['except' => 10],
+            'paginacion' => ['except' => '20'],
         ];  
     public function render()
     {
@@ -32,12 +32,13 @@ class MarketingIndex extends Component
         $params = [
             'marketings' => $marketings,
         ];
-        return view('livewire.marketing-index',$params);
+        return view('livewire.marketing-index',$params)
+        ->with('i', (request()->input('page', 1)-1)*$marketings->perPage());
         
     }
     private function consulta()
     {
-        $query = Marketing::orderBy('id','ASC');
+        $query = Marketing::orderBy('id','DESC');
         if( $this->busqueda != '')
         {
             $query->where('fecha','LIKE', '%'.$this->busqueda.'%');

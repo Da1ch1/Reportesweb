@@ -32,12 +32,13 @@ class ContribuyenteIndex extends Component
         $params = [
             'contribuyentes' => $contribuyentes,
         ];
-        return view('livewire.contribuyente-index',$params);
+        return view('livewire.contribuyente-index',$params)
+        ->with('i', (request()->input('page', 1)-1)*$contribuyentes->perPage());
         
     }
     private function consulta()
     {
-        $query = Contribuyente::orderBy('id','ASC');
+        $query = Contribuyente::orderBy('id','DESC');
         if( $this->busqueda != '')
         {
             $query->where('rfc','LIKE', '%'.$this->busqueda.'%');

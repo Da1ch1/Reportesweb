@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Avance;
+use App\Models\Contribuyente;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -10,13 +11,13 @@ class AvanceIndex extends Component
 {
     use WithPagination;
     public $busqueda = '';
-    public $paginacion = 10;
+    public $paginacion = 20;
     protected $paginationTheme = 'bootstrap';
     protected $queryString =
     
         [
             'busqueda' => ['except' => ''],
-            'paginacion' => ['except' => 10],
+            'paginacion' => ['except' => 20],
         ];  
     public function render()
     {
@@ -40,7 +41,12 @@ class AvanceIndex extends Component
         $query = Avance::orderBy('id','ASC');
         if( $this->busqueda != '')
         {
-            $query->where('ESTATUS','LIKE', '%'.$this->busqueda.'%');
+            $query->where('ESTATUS','LIKE', '%'.$this->busqueda.'%')
+                ->orWhere('fecha','LIKE','%'.$this->busqueda. '%')
+                ->orWhere('pendientes','LIKE','%'.$this->busqueda. '%')
+                ->orWhereHas('Contribuyente',function($q){
+                    $q->where('nombre', 'LIKE', '%'.$this->busqueda.'%');
+                });
                         
         }
         return $query;

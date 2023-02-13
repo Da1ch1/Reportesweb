@@ -89,6 +89,7 @@
         </main>
         @livewireScripts
     </div>
+    <script src="{{ asset('material') }}/js/nav.js"></script>
 </body>
 </html>
 

@@ -9,6 +9,13 @@
 
     <title>@yield('title')</title>
 
+    <!--Links de exportacion Excel-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
+    <link href="{{ asset('material') }}/demo/excel.css" rel="stylesheet">
+    
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -95,6 +102,7 @@
         </main>
         @livewireScripts
     </div>
+    <script src="{{ asset('material') }}/js/nav.js"></script>
 </body>
 </html>
 

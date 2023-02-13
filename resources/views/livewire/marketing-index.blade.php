@@ -5,8 +5,19 @@
             <span id="card_title">
                 {{ __('Marketing') }}
             </span>
-            <div class="col-sm-2" >
-                <input style="margin-left: 15px" type="text" name="busqueda" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">   
+            <div class="col-sm-1">
+                <button onclick="exportTableToExcel('tblData', 'Tabla_Marketing')" class=" float-center btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 9px;">Export Table</button>
+            </div>
+            <div class="col-sm-1" >
+                <input  type="text" name="busqueda" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">   
+            </div>
+            <div class="float-center col-mm-1 ">
+                <select  name="" id="" class="form-select  border-dark-subtle"  wire:model="paginacion">
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                </select>
             </div>
              <div class="float-right">
                 <a href="{{ route('marketings.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
@@ -16,14 +27,14 @@
         </div>
     </div>
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-primary">
             <p>{{ $message }}</p>
         </div>
     @endif
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" id="tblData">
                 <thead class="thead">
                     <tr>
                         <th>N°</th>
@@ -41,7 +52,7 @@
                 <tbody>
                     @foreach ($marketings as $marketing)
                         <tr>
-                            <td>{{ $marketing->id }}</td>
+                            <td>{{ ++$i }}</td>
                             
                             <td>{{ $marketing->fecha }}</td>
                             <td>{{ $marketing->actividad }}</td>
@@ -64,5 +75,6 @@
                 </tbody>
             </table>
         </div>
+        {!! $marketings->links() !!}
     </div>
 </div>

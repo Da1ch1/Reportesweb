@@ -11,6 +11,15 @@
             <div class="col-sm-2" >
                 <input style="margin-left: 15px" type="text" name="busqueda" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">   
             </div>
+            <div class="float-center col-mm-1 ">
+                <select  name="" id="" class="form-select  border-dark-subtle"  wire:model="paginacion">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    
+                </select>
+            </div>
              <div class="float-right">
                 <a href="{{ route('avances.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                   {{ __('+ Crear') }}
@@ -26,7 +35,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
+            <table id="example" class="table table-striped table-hover">
                 <thead class="thead">
                     <tr>
                         <th>N°</th>
@@ -69,5 +78,7 @@
                 </tbody>
             </table>
         </div>
+        {!! $avances->links() !!}
     </div>
 </div>
+

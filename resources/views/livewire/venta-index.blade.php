@@ -4,8 +4,19 @@
             <span id="card_title">
                 {{ __('Venta') }}
             </span>
-            <div class="col-sm-2" >
+            <div class="col-sm-1">
+                <button onclick="exportTableToExcel('tblData', 'Tabla_Ventas')" class=" float-center btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 9px;">Export Table</button>
+            </div>
+            <div class="col-sm-1" >
                 <input style="margin-left: 15px" type="text" name="busqueda" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">   
+            </div>
+            <div class="float-center col-mm-1 ">
+                <select  name="" id="" class="form-select  border-dark-subtle"  wire:model="paginacion">
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                </select>
             </div>
              <div class="float-right">
                 <a href="{{ route('ventas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
@@ -25,7 +36,7 @@
     <div class="card-header">      
         <div class="card-body">
             <div class="table-responsive">
-                 <table class="table table-striped table-hover">
+                 <table class="table table-striped table-hover" id="tblData">
                     <thead class="thead">
                          <tr>
                             <th></th>
@@ -77,7 +88,7 @@
                         @foreach ($ventas as $venta)
                             <tr>
                                 <td></td>
-                                <td>{{ $venta->id}}</td>
+                                <td>{{ ++$i}}</td>
                                 <th></th>
                                 <td>{{ $venta->cliente->nombre }}</td>
                                 <th></th>
@@ -138,5 +149,6 @@
             </div>
         </div>
     </div>
+    {!! $ventas->links() !!}
     </div> 
 </div>

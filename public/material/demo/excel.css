@@ -1,0 +1,14 @@
+table.dataTable thead{
+    
+    color: #000000;
+}
+
+.page-item.active .page-link{
+    background-color: rgb(21, 155, 233) !important;
+    color: #ffff;
+}
+
+.page-link{
+    color: black;
+}
+

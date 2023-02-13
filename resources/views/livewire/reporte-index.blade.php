@@ -5,17 +5,18 @@
             <span id="card_title">
                 {{ __('Soporte') }}
             </span>
-            <a href="{{route('home')}}" class=" float-center btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 9px;" >PDF</a>
-            &nbsp;
-            <div class="float-center col-sm-3 " >
+            <div class="col-sm-1">
+                <button onclick="exportTableToExcel('tblData', 'Tabla_Soporte-Técnico')" class=" float-center btn btn-dark" style="margin-left: 18px; --bs-btn-font-size: 9px;">Export Table</button>
+            </div>
+            <div class="float-center col-sm-1 " >
                 <input  type="text" name="" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">
             </div>
             <div class="float-center col-mm-1 ">
                 <select  name="" id="" class="form-select  border-dark-subtle"  wire:model="paginacion">
-                    <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
+                    <option value="200">200</option>
                 </select>
             </div>
              <div class="float-right">
@@ -33,7 +34,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" id="tblData">
                 <thead class="thead">
                     <tr>
                         <th>N°</th>
@@ -56,7 +57,7 @@
                 <tbody>
                     @foreach ($soportes as $soporte)
                         <tr>
-                            <td>{{ $soporte->id }}</td>
+                            <td>{{ ++$i }}</td>
                             
                             <td>{{ $soporte->Fecha_inicio }}</td>
                             <td>{{ $soporte->Fecha_fin }}</td>
@@ -84,5 +85,6 @@
                 </tbody>
             </table>
         </div>
+        {!! $soportes->links() !!}
     </div>
 </div>

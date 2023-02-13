@@ -9,7 +9,7 @@
             <div class="col-sm-12">
                 <!--El contenido se encuentra en la carpeta resources/livewire/marketing-index y  la linea de abajo hace llamado a esa vista-->
                 @livewire('marketing-index')
-                {!! $marketings->links() !!}
+               
             </div>
         </div>
     </div>

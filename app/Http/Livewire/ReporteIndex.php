@@ -12,13 +12,13 @@ class ReporteIndex extends Component
 {
     use WithPagination;
     public $busqueda = '';
-    public $paginacion = 10;
+    public $paginacion = 20;
     protected $paginationTheme = 'bootstrap';
     protected $queryString =
     
         [
             'busqueda' => ['except' => ''],
-            'paginacion' => ['except' => 10],
+            'paginacion' => ['except' => 20],
         ];  
     public function render()
     {
@@ -35,12 +35,13 @@ class ReporteIndex extends Component
         $params = [
             'soportes' => $soportes,
         ];
-        return view('livewire.reporte-index', $params);
+        return view('livewire.reporte-index', $params)
+        ->with('i', (request()->input('page', 1)-1)*$soportes->perPage());
         
     }
     private function consulta()
     {
-        $query = Soporte::OrderBy('id','ASC');
+        $query = Soporte::OrderBy('id','DESC');
         if( $this->busqueda != '')
         {
             $query->where('Fecha_inicio','LIKE', '%'.$this->busqueda.'%')

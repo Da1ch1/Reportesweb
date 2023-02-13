@@ -10,13 +10,13 @@ class VentaIndex extends Component
 {
     use WithPagination;
     public $busqueda = '';
-    public $paginacion = 10;
+    public $paginacion = 20;
     protected $paginationTheme = 'bootstrap';
     protected $queryString =
     
         [
             'busqueda' => ['except' => ''],
-            'paginacion' => ['except' => 10],
+            'paginacion' => ['except' => 20],
         ];  
     public function render()
     {
@@ -32,12 +32,13 @@ class VentaIndex extends Component
         $params = [
             'ventas' => $ventas,
         ];
-        return view('livewire.venta-index',$params);
+        return view('livewire.venta-index',$params)
+        ->with('i', (request()->input('page', 1)-1)*$ventas->perPage());
         
     }
     private function consulta()
     {
-        $query = Venta::orderBy('id','ASC');
+        $query = Venta::orderBy('id','DESC');
         if( $this->busqueda != '')
         {
             $query->where('Atendio','LIKE', '%'.$this->busqueda.'%')
