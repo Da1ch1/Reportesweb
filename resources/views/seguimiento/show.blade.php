@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.prospectos')
 
-@section('template_title')
-    {{ $seguimiento->name ?? 'Show Seguimiento' }}
-@endsection
+@section('title','Ver Seguimientos')
+
 
 @section('content')
     <section class="content container-fluid">
@@ -11,10 +10,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Seguimiento</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('seguimientos.index') }}"> Back</a>
+                            <span class="card-title">Ver Seguimientos</span>
+                            <a href="{{ route('seguimientos.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                                {{ __('atras') }}
+                              </a>
                         </div>
                     </div>
 

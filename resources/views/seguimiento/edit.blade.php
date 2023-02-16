@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.prospectos')
 
-@section('template_title')
-    Update Seguimiento
-@endsection
+@section('title','Editar Seguimiento')
 
 @section('content')
     <section class="content container-fluid">
@@ -13,7 +11,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Seguimiento</span>
+                        <span class="card-title">Editar Seguimientos</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('seguimientos.update', $seguimiento->id) }}"  role="form" enctype="multipart/form-data">
