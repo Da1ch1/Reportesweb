@@ -13,6 +13,10 @@ use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\StatController;
 use App\Http\Controllers\SpejecutivoController;
 use App\Http\Controllers\SoporteController;
+use App\Http\Controllers\ProspectoController;
+use App\Http\Controllers\AgenteController;
+use App\Http\Controllers\SeguimientoController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +51,11 @@ Route::resource('regimens', App\Http\Controllers\RegimenController::class);
 Route::resource('avances', App\Http\Controllers\AvanceController::class);
 Route::get('/vista', [ContribuyenteController::class, 'vista']) ->name('contribuyente.vista');
 
+
+//Rutas para area de prospectos
+Route::resource('prospectos', App\Http\Controllers\ProspectoController::class);
+Route::resource('seguimientos', App\Http\Controllers\SeguimientoController::class);
+Route::resource('agentes', App\Http\Controllers\AgenteController::class);
 
 
 //Rutas para area de ventas

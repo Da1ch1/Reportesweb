@@ -17,6 +17,7 @@
             <div style="display: flex; justify-content: space-between; align-items: center;">   
                 <button class="button" onclick="location.href='{{route('soportes.index') }}'">{{ __('Soporte Tecnico') }}</button>
                 <button class="button" onclick="location.href='{{route('ventas.index') }}'">{{ __('Ventas') }}</button>
+                <button class="button" onclick="location.href='{{route('prospectos.index') }}'">{{ __('Prospectos') }}</button>
                 <button class="button" onclick="location.href='{{url('/vista') }}'">{{_('Contabilidad')}}</button>
                 <button class="button" onclick="location.href='{{route('marketings.index') }}'">{{_('Márketing')}}</button>
             </div>

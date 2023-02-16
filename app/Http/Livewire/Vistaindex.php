@@ -44,9 +44,13 @@ class VistaIndex extends Component
         {
             $query->where('ESTATUS','LIKE', '%'.$this->busqueda.'%')
                 ->orWhere('fecha','LIKE','%'.$this->busqueda. '%')
+                ->orWhere('mes','LIKE','%'.$this->busqueda. '%')
                 ->orWhere('pendientes','LIKE','%'.$this->busqueda. '%')
                 ->orWhereHas('Contribuyente',function($q){
                     $q->where('nombre', 'LIKE', '%'.$this->busqueda.'%');
+                })
+                ->orWhereHas('Contribuyente',function($q){
+                    $q->where('rfc', 'LIKE', '%'.$this->busqueda.'%');
                 });
                         
         }

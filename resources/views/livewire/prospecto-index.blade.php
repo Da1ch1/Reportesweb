@@ -3,9 +3,8 @@
         <div style="display: flex; justify-content: space-between; align-items: center;">
 
             <span id="card_title" style="color:rgb(0, 0, 0)">
-                {{ __('Soporte') }}
+                {{ __('Prospectos') }}
             </span>
-            
             <div class="float-center col-sm-1 " >
                 <input  type="text" name="" id="" placeholder="Buscar..." class="form-control border-dark-subtle" wire:model="busqueda">
             </div>
@@ -18,7 +17,7 @@
                 </select>
             </div>
              <div class="float-right">
-                <a href="{{ route('soportes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                <a href="{{ route('prospectos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                   {{ __('+ Crear') }}
                 </a>
               </div>
@@ -37,42 +36,34 @@
                     <tr>
                         <th>N°</th>
                         
-                        <th>Fecha Inicio</th>
-                        <th>Fecha Fin</th>
-                        <th>Hora Inicio</th>
-                        <th>Hora Fin</th>
-                        <th>Cliente</th>
-                        <th>Asunto</th>
-                        <th>Ejecutivo</th>
-                        <th>Estatus</th>
-                        <th>Evidencia</th>
-                        <th>Post venta</th>
-                        <th>Comentarios</th>
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                        <th>Servicio</th>
+                        <th>Medio de Contacto</th>
+                        <th>Seguimientos</th>
+                        <th>Agente</th>
+                        <th>Fecha</th>
 
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($soportes as $soporte)
+                    @foreach ($prospectos as $prospecto)
                         <tr>
                             <td>{{ ++$i }}</td>
                             
-                            <td>{{ $soporte->Fecha_inicio }}</td>
-                            <td>{{ $soporte->Fecha_fin }}</td>
-                            <td>{{ $soporte->Hora_inicio }}</td>
-                            <td>{{ $soporte->Hora_fin }}</td>
-                            <td>{{ $soporte->Cliente }}</td>
-                            <td>{{ $soporte->Asunto }}</td>
-                            <td>{{ $soporte->spejecutivo->nombre }}</td>
-                            <td>{{ $soporte->stat->estatus }}</td>
-                            <td>{{ $soporte->Evidencia }}</td>
-                            <td>{{ $soporte->PostVenta }}</td>
-                            <td>{{ $soporte->Comentarios }}</td>
+                            <td>{{ $prospecto->Nombre }}</td>
+                            <td>{{ $prospecto->Contacto }}</td>
+                            <td>{{ $prospecto->Servicio }}</td>
+                            <td>{{ $prospecto->Medio_contacto }}</td>
+                            <td>{{ $prospecto->seguimiento->seguimiento }}</td>
+                            <td>{{ $prospecto->agente->nombre }}</td>
+                            <td>{{ $prospecto->Fecha }}</td>
 
                             <td>
-                                <form action="{{ route('soportes.destroy',$soporte->id) }}" method="POST">
-                                    <a class="btn btn-sm btn-primary " href="{{ route('soportes.show',$soporte->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
-                                    <a class="btn btn-sm btn-success" href="{{ route('soportes.edit',$soporte->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                <form action="{{ route('prospectos.destroy',$prospecto->id) }}" method="POST">
+                                    <a class="btn btn-sm btn-success " href="{{ route('prospectos.show',$prospecto->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                    <a class="btn btn-sm btn-primary" href="{{ route('prospectos.edit',$prospecto->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
@@ -83,6 +74,6 @@
                 </tbody>
             </table>
         </div>
-        {!! $soportes->links() !!}
+        {!! $prospectos->links() !!}
     </div>
 </div>

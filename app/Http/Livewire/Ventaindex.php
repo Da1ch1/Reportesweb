@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire;
 use App\Models\Cliente;
+use App\Models\Actividade;
+use App\Models\Costo;
+use App\Models\Contacto;
 use App\Models\Venta;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -43,8 +46,31 @@ class VentaIndex extends Component
         {
             $query->where('Atendio','LIKE', '%'.$this->busqueda.'%')
                         ->orWhere('Fecha','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Procesoactividad','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Soporte','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Nfactura','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Poliza','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Horario','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Sistemas','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Contabilidad','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Programacion','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Diseño','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('MKT','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Nom','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Equipos','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Antivirus','LIKE','%'.$this->busqueda. '%')
+                        ->orWhere('Cursos','LIKE','%'.$this->busqueda. '%')
                         ->orWhereHas('cliente',function($q){
                             $q->where('nombre', 'LIKE', '%'.$this->busqueda.'%');
+                        })
+                        ->orWhereHas('contacto',function($q){
+                            $q->where('nombre', 'LIKE', '%'.$this->busqueda.'%');
+                        })
+                        ->orWhereHas('costo',function($q){
+                            $q->where('costos', 'LIKE', '%'.$this->busqueda.'%');
+                        })
+                        ->orWhereHas('actividade',function($q){
+                            $q->where('actividad', 'LIKE', '%'.$this->busqueda.'%');
                         });
         }
         return $query;

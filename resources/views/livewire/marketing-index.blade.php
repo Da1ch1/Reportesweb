@@ -1,8 +1,8 @@
 <div class="card">
-    <div class="card-header">
+    <div class="card-header" style="background-color: rgba(0, 0, 0, 0.11)">
         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-            <span id="card_title">
+            <span id="card_title" style="color:rgb(0, 0, 0)">
                 {{ __('Marketing') }}
             </span>
             <div class="col-sm-1" >

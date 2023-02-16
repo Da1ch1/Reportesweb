@@ -1,7 +1,7 @@
 <div class="card">
-    <div class="card-header">
+    <div class="card-header" style="background-color: rgba(0, 0, 0, 0.11)">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span id="card_title">
+            <span id="card_title" style="color:rgb(0, 0, 0)">
                 {{ __('Venta') }}
             </span>
             
@@ -132,10 +132,10 @@
                                 <td>
                                     <form action="{{ route('ventas.destroy',$venta->id) }}" method="POST">
                                         <a class="btn btn-sm btn-primary " style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" href="{{ route('ventas.show',$venta->id) }}"><i class="fa fa-fw fa-eye" ></i> Ver</a>
-                                        <a class="btn btn-sm btn-success" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" href="{{ route('ventas.edit',$venta->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                        <a class="btn btn-sm btn-success" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" href="{{ route('ventas.edit',$venta->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;"><i class="fa fa-fw fa-trash"></i> Borrar</button>
                                     </form>
                                 </td>
                             </tr>

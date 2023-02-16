@@ -1,6 +1,6 @@
-@extends('layouts.ventas')
+@extends('layouts.prospectos')
 
-@section('title','Costos')
+@section('title','Seguimiento')
 
 @section('content')
     <div class="container-fluid">
@@ -11,14 +11,14 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Costo') }}
-                                <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
-                                    {{ __('Reportes') }}
+                                {{ __('Seguimientos') }}
+                                <a href="{{ route('prospectos.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left" style="margin-left: 17px">
+                                    {{ __('Vista') }}
                                   </a>
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('costos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('seguimientos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('+ Crear') }}
                                 </a>
                               </div>
@@ -35,27 +35,27 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>N°</th>
                                         
-										<th>Costos</th>
+										<th>Seguimiento</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($costos as $costo)
+                                    @foreach ($seguimientos as $seguimiento)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $costo->costos }}</td>
+											<td>{{ $seguimiento->seguimiento }}</td>
 
                                             <td>
-                                                <form action="{{ route('costos.destroy',$costo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" href="{{ route('costos.show',$costo->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
-                                                    <a class="btn btn-sm btn-success" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" href="{{ route('costos.edit',$costo->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('seguimientos.destroy',$seguimiento->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-success " href="{{ route('seguimientos.show',$seguimiento->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-primary" href="{{ route('seguimientos.edit',$seguimiento->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" style="--bs-btn-padding-y: .28rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .67rem;" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $costos->links() !!}
+                {!! $seguimientos->links() !!}
             </div>
         </div>
     </div>
